@@ -3,14 +3,8 @@
  > Authors: [Rikki Kahn-Yee](https://github.com/rikkiky), [Amshu Bellur](https://github.com/mushabell), [Jayanth Samala](https://github.com/jayanth-samala), [Nikhil Vankayala](https://github.com/NikhilVankayala)
 
 ## Project Description
- > * Why is it important or interesting to you?
->      *This project is a play on the game “Snakes and Ladders”. To make the game more interesting we want to implement a game that allows for customization in the dice, the number of vipers(snakes), the number of vines(ladders), and the number of players. Vines will be used to climb up in the board, vipers will move a player down the board, and the dice is used to see how far you move. The user who is able to move to the last position, position 100, is the winner of the game. 
- > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
- > * What will be the input/output of your project?
- > * What are the features that the project provides?
->      *The project will provide features such as customizable number of players, vipers and vines, number of sides of the die. The number of players will range from 2-4, the number of vipers will range from 5-10, the number of vines will range from 5-10, and the number of sides for the die is 6-15.
-> 
- > You also need to set up an empty project board using GitHub projects (board view with default columns). Make sure you add the board under your project repository. You should also have a Product Backlog and In testing columns added. All columns should be in the right order.
+ > This project is a play on the game “Snakes and Ladders”. To make the game more interesting we want to implement a game that allows for customization in the dice, the number of vipers(snakes), the number of vines(ladders), and the number of players. Vines will be used to climb up in the board, vipers will move a player down the board, and the dice is used to see how far you move. The user who is able to move to the last position, position 100, is the winner of the game. We plan to use C++, VS Code, GitHub, and terminal for user input/output. The input/output of our project will be in the VS Code terminal. The project will provide features such as customizable number of players, vipers and vines, number of sides of the die. The number of players will range from 2-4, the number of vipers will range from 5-10, the number of vines will range from 5-10, and the number of sides for the die is 6-15.
+
  > ## Phase II
  > In addition to completing the "User Interface Specification" and "Class Diagram" sections below, you will need to:
  > * Create an "Epic" (note) for each feature. Place these epics in the `Product Backlog` column
