@@ -30,6 +30,62 @@ This diagram portrays how the user can navigate to different screens throughout 
 ### Screen Layouts
 > Include the layout of each of your screens. The layout should describe the screen’s major components such as menus and prompts for user inputs and expected output, or any graphical user interface components if applicable (e.g. buttons, text boxes, etc). Explain what is on the layout, and the purpose of each menu item, button, etc. If many screens share the same layout, start by describing the general layout and then list the screens that will be using that layout and the differences between each of them.
 
+#### Beginning: 
+It is currently 6:43pm on campus. There are 6 people in the classroom who are Dr.Brown, Cassidy, Jerome, Jessie, Ryan, and Greta. There had been an explosion in Dr.Heisenberg's lab and had caused a zombie apocalypse! You must make it off the campus to save your life! Jerome is the president of the MMA club. Greta loves to hack computer systems for fun. Cassidy is on academic probation and would lose her athletic scholarship if she does not do well in class. Ryan is very popular because he is good at manipulating people. Jessie loves to be a part of the track team and work with her geology professors.
+Who would you like to be:
+*Ryan
+*Jessie
+*Dr.Brown
+*Cassidy
+*Jerome
+*Greta
+Please type the number of the character you would like to be:
+
+**Greta**: Hi Greta! Hope you are ready for some tough challenges. A character skill that you carry is your ability to pick locks. When you were a child, your parents would lock your favorite candy in the top cabinet with a lock. With a lot of practice, you were able to figure out how to pick the lock and can pick any lock that you want now! Now you and the people in your class must exit the campus together to survive.
+
+**Jerome**: Hi Jerome! Hope you are ready for some tough challenges. A character skill that you carry is your ability to knock people out with one punch. When you were a child, you were bullied a lot as a kid. Your parents signed you up for MMA classes to teach you self defense, and now you can really fight! Now you and the people in your class must exit the campus together to survive.
+
+**Cassidy**: Hi Cassidy! Hope you are ready for some tough challenges. A character skill that you carry is your strength! When you were a child, you would work in the ice cream parlor every summer to make some money and with every scoop that you scooped, you gained a lot of muscle. Now you can bench over 250lbs! Now you and the people in your class must exit the campus together to survive.
+
+**Dr.Brown**: Hi Dr.Brown! Hope you are ready for some tough challenges. A character skill that you carry is your glasses! When you were a child, you would play with your glasses and the sun because you could start fires with the right angle and shine light in other people’s faces! However, you are a little bit out of practice since you have not played with your glasses since you became a professor. Now you and the people in your class must exit the campus together to survive.
+
+**Jessie**: Hi Jessie! Hope you are ready for some tough challenges. A character skill that you carry is your speed! When you were a child, you did not have a lot of money growing up, so you would steal cans of soup from the supermarket and run back home to make sure that you were not caught by the guards. With your practice in running, you were able to become a track star and set the school record for fastest sprinter. Now you and the people in your class must exit the campus together to survive.
+
+**Ryan**: Hi Ryan! Hope you are ready for some tough challenges. A character skill that you carry is your ability to manipulate people! When you were a child, your parents got divorced and got you a lot of gifts to make up for it. Eventually you learned to manipulate them to get any gift that you wanted. With this skill of manipulation, you became very popular in school and learned how to manipulate the people in school! Now you and the people in your class must exit the campus together to survive.
+
+#### Event 1:
+When you begin to run out of the classroom and into the hallway you notice a hoard of zombies. You are backed against a corner. You notice that you are backed against the janitor’s closet. You enter the closest with all your classmates to hide from the zombies. What do you want to do now?
+
+→ Greta
+* Wait for the zombies to leave and then exit the janitor’s closet
+* Use the supplies in the closet as a weapon against the zombies
+* Use your skills against the zombie
+
+→ Jerome
+* Use the vents in the closet to get out
+* Wait for the zombies to leave and then exit the janitor’s closet
+* Use your skills against the zombies
+  
+→ Cassidy
+* Use your skills against the zombies
+* Wait for the zombies to leave and then exit the janitor’s closet
+* Ask Jerome to go out and knock out all the zombies
+  
+→ Ryan
+* Wait for the zombies to leave and then exit the janitor’s closet
+* Use th supplies in the closet as a weapon against the zombies
+* Use your skills against the zombies
+  
+→ Jessie
+* Use your skill against the zombies
+* Ask Ryan to go talk to the zombies and manipulate them into letting you all go
+* Wait for the zombies to leave and then exit the janitor’s closet
+  
+→ Dr.Brown
+* Wait for the zombies to leave and then exit the janitor’s closet.
+* Use your skills against the zombies
+* Ask Cassidy to lift throw heavy buckets from the closest onto the zombies
+
 ## Class Diagram
  > Include a **class diagram(s)** for your project and a **description** of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides).
  
