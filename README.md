@@ -248,7 +248,8 @@ Would you like to choose to use the gun or the knife in this obstacle?
 * gun
 
 ## Class Diagram
- > Include a **class diagram(s)** for your project and a **description** of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides).
+![Apocalyptic_Odyssey_UML_Diagram drawio](https://github.com/cs100/final-project-nvank001_jsama031_rkahn007_abell062/assets/19979330/4632c2d2-bc3c-418e-bc11-b5df8382bb85)
+The class diagram for Apocalyptic Odyssey is made up of 7 classes — BaseCharacter, Cassidy, Jerome, Ryan, Dr_Brown, Jessie, and Greta. BaseCharacter is an abstract base class that contains bool variables knife and gun for the weapons picked up during the game, string variables for the strengths and weaknesses of each character, and the int gameProgressGuage variable to track how far into the game the user is. The BaseCharacter class also has 5 void undefined functions: event1(), event2(), event3(), event4(), and event5() — one for each event in the game. Cassidy, Jerome, Ryan, Dr_Brown, Jessie, and Greta derive from the BaseCharacter class. Each of these classes overwrite the 5 event functions declared in BaseCharacter and define the functions in accordance with their respective character's story line.
  
  > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
