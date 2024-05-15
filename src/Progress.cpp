@@ -1,10 +1,10 @@
-#include "../src/Progress.cpp"
+#include "../header/Progress.h"
 
 #include <string>
 using namespace std;
 
 void Progress::updateGauge(Events event, bool death) {
-    //after each event, call updateGauge -- for programmer
+    //after each event, call updateGauge --for programmer
 }
 
 //helper function
