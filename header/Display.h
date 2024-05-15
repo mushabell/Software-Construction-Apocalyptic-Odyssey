@@ -2,11 +2,11 @@
 #include "Events.h"
 
 class Display {
-    Public:
-        void problem(person Person, event Event);
-        void options(person Person, event Event);
-        void status(person Person);
-        void death(person Person, event Event);
+    public:
+        void problem(Person person, Event event);
+        void options(Person person, Event event);
+        void status(Person person);
+        void death(Person person, Event event);
         void menu();
-        void backstory(person Person);
+        void backstory(Person person);
 };
