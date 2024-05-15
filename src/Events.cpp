@@ -1,5 +1,4 @@
 #include "../header/Events.h"
-#include "../src/Display.cpp"
 #include <iostream>
 using namespace std;
 

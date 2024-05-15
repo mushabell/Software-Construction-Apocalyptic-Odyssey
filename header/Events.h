@@ -2,7 +2,9 @@
 
 #include <string>
 #include <iostream>
-#include "person.h"
+#include "Person.h"
+#include "Display.h"
+#include "Progress.h"
 
 using namespace std;
 
