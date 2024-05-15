@@ -1,6 +1,6 @@
 #include "../header/Person.h"
 
-Person(string CharacterName, string CharacterWeakness, string CharacterStrength){
+Person::Person(string CharacterName, string CharacterWeakness, string CharacterStrength){
     Character = CharacterName;
     weakness = CharacterWeakness;
     strength = CharacterStrength;
@@ -9,10 +9,10 @@ Person(string CharacterName, string CharacterWeakness, string CharacterStrength)
     gameProgressGauge = 0;
 }
 
-void updateGun(bool status){
+void Person::updateGun(bool status){
     gun = status;
 }
 
-void updateKnife(bool status){
+void Person::updateKnife(bool status){
     knife = status;
 }
