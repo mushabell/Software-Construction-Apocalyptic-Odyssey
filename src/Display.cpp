@@ -1,4 +1,4 @@
-#include "../src/Display.h"
+#include "../header/Display.h"
     
 void Display::eventPrompt(Person person, Event event) {
     // Print out the event prompt. Use options

@@ -1,12 +1,17 @@
-#include "Person.h"
-#include "Events.h"
+#pragma once
+
+#include "../header/Person.h"
+#include "../header/Events.h"
+#include "../header/Progress.h"
+
+using namespace std;
 
 class Display {
     public:
-        void problem(Person person, Event event);
-        void options(Person person, Event event);
+        void problem(Person person, Events event);
+        void options(Person person, Events event);
         void status(Person person);
-        void death(Person person, Event event);
+        void death(Person person, Events event);
         void menu();
         void backstory(Person person);
 };
