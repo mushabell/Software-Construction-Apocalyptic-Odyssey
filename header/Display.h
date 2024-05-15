@@ -8,7 +8,7 @@ using namespace std;
 
 class Display {
     public:
-        void problem(Person person, Events event);
+        void eventPrompt(Person person, Events event);
         void options(Person person, Events event);
         void status(Person person);
         void death(Person person, Events event);
