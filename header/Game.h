@@ -15,15 +15,16 @@ class Events{
         bool death;
         bool knife;
         bool gun;
-    public:
-        //constructor
-        Events(string& character, int event, bool death, bool knife, bool gun): character(character), eventNum(event), death(death), knife(knife), gun(gun){};
         //functions for each event
-        void event1(Person person);
-        void event2(Person person);
-        void event3(Person person);
-        void event4(Person person);
-        void event5(Person person);
+        void event1(Person person, Display display);
+        void event2(Person person, Display display);
+        void event3(Person person, Display display);
+        void event4(Person person, Display display);
+        void event5(Person person, Display display);
         //function for what happens when a character dies
         void death(Person person, int event);
+    public:
+        //constructor
+        Game(string& character, int event, bool death, bool knife, bool gun): character(character), eventNum(event), death(death), knife(knife), gun(gun){};
+        void BeginEvent(Person person, Display display);
 };
