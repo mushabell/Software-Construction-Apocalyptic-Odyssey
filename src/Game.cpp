@@ -10,17 +10,11 @@ void Game::event1(Person person, Display display){
      "(R) Ask Ryan to go talk to the zombies and manipulate them into letting you all go", 
      "(C) Ask Cassidy to lift throw heavy buckets from the closest onto the zombies", "(Z) Use your skills against the zombies";}
 
-    cout << "When you begin to run out of the classroom and into the hallway you notice a hoard of zombies. You are backed against a corner.
-    You notice that you are backed against the janitors closet. You enter the closest with all your classmates to hide from the zombies.
-    What do you want to do now?";
+    string event1 = "When you begin to run out of the classroom and into the hallway you notice a hoard of zombies. You are backed against a corner. You notice that you are backed against the janitors closet. You enter the closest with all your classmates to hide from the zombies. What do you want to do now?";
+    display.eventPompt(event1);
     char option;
     if(person.getName() == "Greta"){
-        display.options(options.at(0));
-        display.options(options.at(0));
-        cout << options.at(2) << endl;
-        cout << "Choose an option: ";
-        cin >> option;
-        cout << endl;
+        display.options(options.at(0), options.at(1), options.at(6));
     }
 }
 
