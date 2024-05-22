@@ -8,6 +8,6 @@ using namespace std;
 
 class Progress {
     public:
-        void updateGauge(Person person, Events event); 
+        void updateGauge(Person person, Game g);
         void DisplayProgressHelper() const;
 };
