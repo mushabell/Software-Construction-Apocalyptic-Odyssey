@@ -4,25 +4,25 @@
 #include <iostream>
 #include "Person.h"
 #include "Display.h"
-#include "Progress.h"
+//#include "Progress.h"
 
 using namespace std;
 
 class Game{
     private:
         string character;
-        int eventNum;
+        int eventNum; 
         bool death;
         bool knife;
         bool gun;
         //functions for each event
-        void event1(Person person, Display display);
+        void event1(Person person, Display dis);
         void event2(Person person, Display display);
         void event3(Person person, Display display);
         void event4(Person person, Display display);
         void event5(Person person, Display display);
         //function for what happens when a character dies
-        void death(Person person, int event);
+        void die(Person person, int event);
     public:
         //constructor
         Game(string& character, int event, bool death, bool knife, bool gun): character(character), eventNum(event), death(death), knife(knife), gun(gun){};
