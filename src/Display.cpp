@@ -1,15 +1,15 @@
 #include "../header/Display.h"
     
-void Display::eventPrompt(Person person, Events event) {
+void Display::eventPrompt(const string& statement) {
     // Print out the event prompt. Use options
 }
-void Display::options(Person person, Events event) {
+void Display::options(const string& option1, const string& option2, const string& option3) {
     // Print options per event
 }
-void Display::status(Person person) {
+void Display::status(const string& statement) {
     // Print strength wekness and weapons
 }
-void Display::death(Person person, Events event) {
+void Display::death(const string& statement) {
     // Print death option result and update game with death
 }
 void Display::menu() {
