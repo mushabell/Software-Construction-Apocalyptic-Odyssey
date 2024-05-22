@@ -4,6 +4,7 @@ add_library(simpleLibrary
     Game.cpp
     Person.cpp
     Progress.cpp
+    main.cpp
 )
 
 find_library(M_LIB m)
