@@ -69,22 +69,22 @@ void Game::event1(Person person, Display dis){
 }
 
 //obstacles for event two
-void Game::event2(Person person, Display display){
+void Game::event2(Person person, Display dis){
     //code here
 }
 
 //obstacles for event three
-void Game::event3(Person person, Display display){
+void Game::event3(Person person, Display dis){
     //code here
 }
 
 //obstacles for event four
-void Game::event4(Person person, Display display){
+void Game::event4(Person person, Display dis){
     //code here
 }
 
 //obstacles for event five
-void Game::event5(Person person,Display display){
+void Game::event5(Person person,Display dis){
     //code here
 }
 
