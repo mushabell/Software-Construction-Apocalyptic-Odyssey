@@ -41,24 +41,30 @@ void Game::event1(Person person, Display dis){
     while (true){
         //checking to make sure than the input is a string
         if (cin >> userChoice) break;
+        dis.error("Please type a valid input. No numbers or symbols are allowed.");
+        cin.ignore();
     }
     //evaluate the user input
-    if(userChoice == "W" || userChoice == "w"){
-        //the path it leads to 
-    } else if(userChoice == "S" || userChoice == "s"){
-        //the path it leads to 
-    } else if(userChoice == "V" || userChoice == "v"){
-        //the path it leads to 
-    } else if(userChoice == "J" || userChoice == "j"){
-        //the path it leads to 
-    } else if(userChoice == "R" || userChoice == "r"){
-        //the path it leads to 
-    } else if(userChoice == "C" || userChoice == "c"){
-        //the path it leads to 
-    } else if(userChoice == "Z" || userChoice == "z"){
-        //the path it leads to 
-    } else {
-        //ask the user for a valid input
+    while (true){
+        if(userChoice == 'W' || userChoice == 'w'){
+            die(person, 1);
+        } else if(userChoice == 'S' || userChoice == 's'){
+            event2(person, dis);
+        } else if(userChoice == 'V' || userChoice == 'v'){
+            event2(person, dis);
+        } else if(userChoice == 'J' || userChoice == 'j'){
+            die(person, 1); 
+        } else if(userChoice == 'R' || userChoice == 'r'){
+            die(person, 1);
+        } else if(userChoice == 'C' || userChoice == 'c'){
+            die(person, 1);
+        } else if(userChoice == 'Z' || userChoice == 'z'){
+            event2(person, dis);
+        } else {
+            dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");
+            cin.ignore();
+            cin >> userChoice;
+        }
     }
 }
 

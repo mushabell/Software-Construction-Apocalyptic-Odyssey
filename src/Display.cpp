@@ -18,3 +18,6 @@ void Display::menu() {
 void Display::backstory(Person person) {
     // Print backstory
 }
+void Display::error(const string& statement){
+    //print the error message
+}

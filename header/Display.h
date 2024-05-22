@@ -14,4 +14,5 @@ class Display {
         void death(const string& statement);
         void menu();
         void backstory(Person person);
+        void error(const string& statement);
 };
