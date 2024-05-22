@@ -1,0 +1,7 @@
+*.o
+.vscode
+Makefile
+CMakeFiles
+cmake_instal.cmake
+CMakeCache.txt
+runAllTests
