@@ -8,10 +8,10 @@ using namespace std;
 
 class Display {
     public:
-        void eventPrompt(Person person, Events event);
-        void options(Person person, Events event);
-        void status(Person person);
-        void death(Person person, Events event);
+        void eventPrompt(string statement);
+        void options(string statement);
+        void status(string statement);
+        void death(string statement);
         void menu();
         void backstory(Person person);
 };
