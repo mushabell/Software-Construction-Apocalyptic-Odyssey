@@ -2,6 +2,7 @@
 #include <iostream>
 using namespace std;
 
+//hello
 //obstacles for event one
 void Events::event1(Person person){
     //code here
