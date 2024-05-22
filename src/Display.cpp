@@ -6,6 +6,9 @@ void Display::eventPrompt(const string& statement) {
 void Display::options(const string& option1, const string& option2, const string& option3) {
     // Print options per event
 }
+void Display::options(const string& option1, const string& option2) {
+    // Print options per event
+}
 void Display::status(const string& statement) {
     // Print strength wekness and weapons
 }
