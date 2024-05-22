@@ -8,7 +8,7 @@
 
 using namespace std;
 
-class Events{
+class Game{
     private:
         string character;
         int eventNum;

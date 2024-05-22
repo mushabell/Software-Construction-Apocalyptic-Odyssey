@@ -4,7 +4,7 @@
 using namespace std;
 
 //obstacles for event one
-void Events::event1(Person person, Display display){
+void Game::event1(Person person, Display display){
     vector<string> options{"(W) Wait for the zombies to leave and then exit the janitors closet", "(S) Use the supplies in the closet as a weapon against the zombies",
      "(V) Use the vents in the closet to get out", "(J) Ask Jerome to go out and knock out all the zombies", 
      "(R) Ask Ryan to go talk to the zombies and manipulate them into letting you all go", 
@@ -25,26 +25,26 @@ void Events::event1(Person person, Display display){
 }
 
 //obstacles for event two
-void Events::event2(Person person, Display display){
+void Game::event2(Person person, Display display){
     //code here
 }
 
 //obstacles for event three
-void Events::event3(Person person, Display display){
+void Game::event3(Person person, Display display){
     //code here
 }
 
 //obstacles for event four
-void Events::event4(Person person, Display display){
+void Game::event4(Person person, Display display){
     //code here
 }
 
 //obstacles for event five
-void Events::event5(Person person,Display display){
+void Game::event5(Person person,Display display){
     //code here
 }
 
 //function for what happens when a character dies
-void Events::death(Person person, int event){
+void Game::death(Person person, int event){
     //code here
 }
