@@ -18,4 +18,6 @@ class Person{
         void updateProgress(int level);
         string getStrength();
         string getWeakness();
+        bool getGun();
+        bool getKnife();
     };
