@@ -45,7 +45,7 @@ When you begin to run out of the classroom and into the hallway you notice a hoa
 → Greta
 * Wait for the zombies to leave and then exit the janitor’s closet
 * Use the supplies in the closet as a weapon against the zombies
-* Use your skills against the zombie
+* Use your skills against the zombies
 
 → Jerome
 * Use the vents in the closet to get out
@@ -59,11 +59,11 @@ When you begin to run out of the classroom and into the hallway you notice a hoa
   
 → Ryan
 * Wait for the zombies to leave and then exit the janitor’s closet
-* Use th supplies in the closet as a weapon against the zombies
+* Use the supplies in the closet as a weapon against the zombies
 * Use your skills against the zombies
   
 → Jessie
-* Use your skill against the zombies
+* Use your skills against the zombies
 * Ask Ryan to go talk to the zombies and manipulate them into letting you all go
 * Wait for the zombies to leave and then exit the janitor’s closet
   
@@ -82,7 +82,7 @@ Nice choice, you made it out of the janitor’s closet! You continue to walk tow
 → Greta
 * Hide in the building until there is only a little bit of zombies outside
 * Ask Jerome to go outside and use his MMA skills to fight the zombies
-* Use your skills against the zombie
+* Use your skills against the zombies
 
 → Jerome
 * Dig a tunnel underground to get out of the building without getting attacked by zombies
@@ -96,7 +96,7 @@ Nice choice, you made it out of the janitor’s closet! You continue to walk tow
 
 → Ryan
 * Wait for the zombies to leave and then exit the building
-* Ask Dr.Brown to set a fire outside to distract the zombies
+* Ask Dr. Brown to set a fire outside to distract the zombies
 * Use your skills against the zombies
 
 → Jessie
@@ -105,7 +105,7 @@ Nice choice, you made it out of the janitor’s closet! You continue to walk tow
 * Carry a mirror with you so every time a zombie comes near you, they only see their own reflection
 
 → Dr.Brown
-* Wait for the zombies to leave and then exit the building.
+* Wait for the zombies to leave and then exit the building
 * Use your skills against the zombies
 * Ask Ryan to manipulate the zombies into letting all of you go
 
@@ -161,7 +161,7 @@ Nice choice, you made it out of the cafeteria! You only have to make it through 
 → Jerome
 * Run away to the other side of the lab
 * Ask Ryan to manipulate the zombies
-* Use the gun/knife to kill the zombie
+* Use the gun/knife to kill the zombies
 
 → Cassidy
 * Use the gun/knife to kill the zombies
@@ -197,7 +197,7 @@ Nice choice! You made it outside of the lab! All you have to do is make it throu
 
 → Jerome
 * Use the gun/knife against the zombies
-* Ask Dr.Brown to set a fire as a distraction
+* Ask Dr. Brown to set a fire as a distraction
 * Use your skills against the zombies
 
 → Cassidy
@@ -207,7 +207,7 @@ Nice choice! You made it outside of the lab! All you have to do is make it throu
 
 → Ryan
 * Dig a tunnel underground to get out of the parking lot
-* Ask Dr.Brown to set a fires a distraction
+* Ask Dr. Brown to set a fires a distraction
 * Use your skills against the zombies
 
 → Jessie

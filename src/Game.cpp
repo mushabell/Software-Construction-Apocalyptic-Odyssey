@@ -4,6 +4,7 @@
 #include <vector>
 using namespace std;
 
+//hello
 //obstacles for event one
 void Game::event1(Person person, Display dis){
     //all options listed in the correct order of index
@@ -75,13 +76,143 @@ void Game::event2(Person person, Display dis){
 
 //obstacles for event three
 void Game::event3(Person person, Display dis){
-    //code here
+    //all options listed in the correct order of index
+    //0: (B) Use the butter in the cafeteria to make the door lock slippery -- die
+    //1: (C): Ask Cassidy to break the door down -- live
+    //2: (S): Use your skill against the door -- live
+    //3: (K): Try to kick the door down -- live
+    //4: (G): Ask Greta to open the door -- live
+    //5: (Z): Wait for the zombies to come break the door -- die
+    //6: (T): Dig a tunnel underground to get out of the cafeteria -- die
+    vector<string> options{"(B) Use the butter in the cafeteria to make the door lock slippery", 
+    "(C) Ask Cassidy to break the door down",
+     "(S) Use your skill against the door", 
+     "(K) Try to kick the door down", 
+     "(G) Ask Greta to open the door", 
+     "(Z) Wait for the zombies to come break the door", 
+     "(T) Dig a tunnel underground to get out of the cafeteria"};
+
+    string event3 = "Nice choice! You made it outside of the building! You decide to go through the cafeteria to choose the shortest path to get off the campus as fast as possible. When you enter the cafeteria you see that the building is empty. You and your classmates enter the main hall and the door closes behind you. You notice a knife on the floor and pick it up for protection. You walk across the hall and try to open the door behind you but you can not! What do you want to do now?";
+    //display the prompt
+    dis.eventPrompt(event3);
+    person.updateKnife(true);
+    char userChoice;
+    //display the options
+    if(person.getName() == "Greta"){
+        dis.options(options.at(0), options.at(1), options.at(2));
+    } else if(person.getName() == "Jerome"){
+        dis.options(options.at(3), options.at(4), options.at(2));
+    } else if(person.getName() == "Cassidy"){
+        dis.options(options.at(2), options.at(6), options.at(4));
+    } else if(person.getName() == "Ryan"){
+        dis.options(options.at(5), options.at(4), options.at(2));
+    } else if(person.getName() == "Jessie"){
+        dis.options(options.at(2), options.at(4), options.at(6));
+    } else if(person.getName() == "Dr.Brown"){
+        dis.options(options.at(0), options.at(2), options.at(4));
+    }
+    //user input
+    while (true){
+        //checking to make sure than the input is a string
+        if (cin >> userChoice) break;
+        dis.error("Please type a valid input. No numbers or symbols are allowed.");
+        cin.ignore();
+    }
+    //evaluate the user input
+    while (true){
+        if(userChoice == 'B' || userChoice == 'b'){
+            die(person, 3);
+        } else if(userChoice == 'C' || userChoice == 'c'){
+            event4(person, dis);
+        } else if(userChoice == 'S' || userChoice == 's'){
+            event4(person, dis);
+        } else if(userChoice == 'K' || userChoice == 'k'){
+            event4(person, dis); 
+        } else if(userChoice == 'G' || userChoice == 'g'){
+            event4(person, dis);
+        } else if(userChoice == 'Z' || userChoice == 'z'){
+            die(person, 3);
+        } else if(userChoice == 'T' || userChoice == 't'){
+            die(person, 3);
+        } else {
+            dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");
+            cin.ignore();
+            cin >> userChoice;
+        }
+    }
 }
 
 //obstacles for event four
 void Game::event4(Person person, Display dis){
-    //code here
+    /*
+    0: (U) Use the gun/knife to kill the zombies - continue to 7 and 8
+    1: (S) Ask Cassidy to throw science equipment at the zombies - die
+    2: (R) Run away to the other side of the lab - die
+    3: (M) Ask Ryan to manipulate the zombies - live
+    4: (P) Create a poison in the lab to kill the zombies with - live
+    5: (H) Act like a statue and hope the zombies will not see you - die
+    6: (F) Set a fire to distract the zombies - live
+    7: (G) Use a gun to kill the zombies - live
+    8: (K) Use a knife to kill the zombies - live
+    */
+    vector <string> options{"(U) Use the gun/knife to kill the zombies", "(S) Ask Cassidy to throw science equipment at the zombies",
+    "(R) Run away to the other side of the lab", "(M) Ask Ryan to manipulate the zombies", "(P) Create a poison in the lab to kill the zombies with",
+    "(H) Act like a statue and hope the zombies will not see you", "(F) Set a fire to distract the zombies", "(G) Use a gun to kill the zombies", "(K) Use a knife to kill the zombies"};
+
+    string event4 = "Nice choice, you made it out of the cafeteria! You only have to make it through the science lab and the parking lot to exit the campus. You walk by the science lab and notice a shortcut through the lab. You decide to take the shortcut and enter the lab. When you enter the lab you find a gun on the floor with three bullets. You pick it up for safety. As you are about to exit the lab, zombies come out from the corner of the lab! What do you want to do:";
+    dis.eventPrompt(event4);
+    char userchoice;
+    person.updateGun(true);
+
+    if(person.getName() == "Greta"){
+        dis.options(options.at(0), options.at(1), options.at(2));
+    } else if(person.getName() == "Jerome"){
+        dis.options(options.at(2), options.at(3), options.at(0));
+    } else if(person.getName() == "Cassidy"){
+        dis.options(options.at(0), options.at(4), options.at(5));
+    } else if(person.getName() == "Ryan"){
+        dis.options(options.at(4), options.at(0), options.at(2));
+    } else if(person.getName() == "Jessie"){
+        dis.options(options.at(0), options.at(2), options.at(5));
+    } else if(person.getName() == "Dr.Brown"){
+        dis.options(options.at(6), options.at(0), options.at(3));
+    }
+    while (true){
+        //checking to make sure than the input is a string
+        if (cin >> userchoice) break;
+        dis.error("Please type a valid input. No numbers or symbols are allowed.");
+        cin.ignore();
+    }
+    while (true){
+        if(userchoice == 'U' || userchoice == 'u'){
+            dis.options(options.at(7), options.at(8));
+            if(userchoice == 'G' || userchoice == 'g'){
+                person.updateGun(false);
+                event5(person, dis);
+            } else if(userchoice == 'K' || userchoice == 'k'){
+                person.updateKnife(false);
+                event5(person, dis);
+            }
+        } else if(userchoice == 'S' || userchoice == 's'){
+            die(person, 4); 
+        } else if(userchoice == 'R' || userchoice == 'r'){
+            die(person, 4); 
+        } else if(userchoice == 'M' || userchoice == 'm'){
+            event5(person, dis);
+        } else if(userchoice == 'P' || userchoice == 'p'){
+            event5(person, dis);
+        } else if(userchoice == 'H' || userchoice == 'h'){
+            die(person, 1);
+        } else if(userchoice == 'F' || userchoice == 'f'){
+            event5(person, dis);
+        } else {
+            dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");
+            cin.ignore();
+            cin >> userchoice;
+        }
+    }
 }
+
 
 //obstacles for event five
 void Game::event5(Person person,Display dis){
