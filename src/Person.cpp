@@ -40,3 +40,13 @@ string Person::getStrength(){
 string Person::getWeakness(){
     return(weakness);
 }
+
+//return the status of the gun
+bool Person::getGun(){
+    return(gun);
+}
+
+//return the status of the knife
+bool Person::getKnife(){
+    return(knife);
+}

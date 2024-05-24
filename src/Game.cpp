@@ -71,12 +71,136 @@ void Game::event1(Person person, Display dis){
 
 //obstacles for event two
 void Game::event2(Person person, Display dis){
-    //code here
+   //all options listed in the correct order of index
+   //0: (H) Hide in the building -- die
+   //1: (J) Ask Jerome -- live
+   //2: (Z) Use your skills against zombie -- live
+   //3: (D) Dig a tunnel underground to get out -- live
+   //4: (R) Ask Ryan to manipulate the zombies -- die
+   //5: (M) Carry a mirror with you -- die
+   //6: (W) Wait for the zombies -- die
+   //7: (B) Ask Dr. Brown -- live
+   vector<string> options{"(H) Hide in the building until there is only a little bit of zombies outside", "(J) Ask Jerome to go outside and use his MMA skills to fight the zombies", "(Z) Use your skills against the zombies", "(D) Dig a tunnel underground to get out of the building without getting attacked by zombies",
+   "(R) Ask Ryan to manipulate the zombies into letting all of you go", "(M) Carry a mirror with you so every time a zombie comes near you, they only see their own reflection", "(W) Wait for the zombies to leave and then exit the building", "(B) Ask Dr. Brown to set a fire outside to distract the zombies"};
+  
+   string event2 = "Nice choice, you made it out of the janitor’s closet! You continue to walk towards the exit of the building. Right before you open the door you notice a bunch of zombies walking around the campus. What do you want to do: ";
+    //display the prompt
+    dis.eventPrompt(event2);
+    char userChoice;
+    //display the options
+    if(person.getName() == "Greta"){
+        dis.options(options.at(0), options.at(1), options.at(2));
+    } else if(person.getName() == "Jerome"){
+        dis.options(options.at(3), options.at(4), options.at(2));
+    } else if(person.getName() == "Cassidy"){
+        dis.options(options.at(2), options.at(5), options.at(3));
+    } else if(person.getName() == "Ryan"){
+        dis.options(options.at(6), options.at(7), options.at(2));
+    } else if(person.getName() == "Jessie"){
+        dis.options(options.at(2), options.at(7), options.at(6));
+    } else if(person.getName() == "Dr.Brown"){
+        dis.options(options.at(6), options.at(2), options.at(4));
+    }
+    //user input
+    while (true){
+        //checking to make sure than the input is a string
+        if (cin >> userChoice) break;
+        dis.error("Please type a valid input. No numbers or symbols are allowed.");
+        cin.ignore();
+    }
+    //evaluate the user input
+    while (true){
+        if(userChoice == 'H' || userChoice == 'h'){
+            die(person, 2);
+        } else if(userChoice == 'J' || userChoice == 'j'){
+            event3(person, dis);
+        } else if(userChoice == 'Z' || userChoice == 'z'){
+            event3(person, dis);
+        } else if(userChoice == 'D' || userChoice == 'd'){
+            event3(person, dis);
+        } else if(userChoice == 'R' || userChoice == 'r'){
+            die(person, 2);
+        } else if(userChoice == 'M' || userChoice == 'm'){
+            die(person, 2);
+        } else if(userChoice == 'W' || userChoice == 'w'){
+            die(person, 2);
+        } else if(userChoice == 'B' || userChoice == 'b'){
+            event3(person,dis);
+        } else {
+            dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");
+            cin.ignore();
+            cin >> userChoice;
+        }
+    }
+
 }
 
 //obstacles for event three
 void Game::event3(Person person, Display dis){
-    //code here
+    //all options listed in the correct order of index
+    //0: (B) Use the butter in the cafeteria to make the door lock slippery -- die
+    //1: (C): Ask Cassidy to break the door down -- live
+    //2: (S): Use your skill against the door -- live
+    //3: (K): Try to kick the door down -- live
+    //4: (G): Ask Greta to open the door -- live
+    //5: (Z): Wait for the zombies to come break the door -- die
+    //6: (T): Dig a tunnel underground to get out of the cafeteria -- die
+    vector<string> options{"(B) Use the butter in the cafeteria to make the door lock slippery", 
+    "(C) Ask Cassidy to break the door down",
+     "(S) Use your skill against the door", 
+     "(K) Try to kick the door down", 
+     "(G) Ask Greta to open the door", 
+     "(Z) Wait for the zombies to come break the door", 
+     "(T) Dig a tunnel underground to get out of the cafeteria"};
+
+    string event3 = "Nice choice! You made it outside of the building! You decide to go through the cafeteria to choose the shortest path to get off the campus as fast as possible. When you enter the cafeteria you see that the building is empty. You and your classmates enter the main hall and the door closes behind you. You notice a knife on the floor and pick it up for protection. You walk across the hall and try to open the door behind you but you can not! What do you want to do now?";
+    //display the prompt
+    dis.eventPrompt(event3);
+    person.updateKnife(true);
+    char userChoice;
+    //display the options
+    if(person.getName() == "Greta"){
+        dis.options(options.at(0), options.at(1), options.at(2));
+    } else if(person.getName() == "Jerome"){
+        dis.options(options.at(3), options.at(4), options.at(2));
+    } else if(person.getName() == "Cassidy"){
+        dis.options(options.at(2), options.at(6), options.at(4));
+    } else if(person.getName() == "Ryan"){
+        dis.options(options.at(5), options.at(4), options.at(2));
+    } else if(person.getName() == "Jessie"){
+        dis.options(options.at(2), options.at(4), options.at(6));
+    } else if(person.getName() == "Dr.Brown"){
+        dis.options(options.at(0), options.at(2), options.at(4));
+    }
+    //user input
+    while (true){
+        //checking to make sure than the input is a string
+        if (cin >> userChoice) break;
+        dis.error("Please type a valid input. No numbers or symbols are allowed.");
+        cin.ignore();
+    }
+    //evaluate the user input
+    while (true){
+        if(userChoice == 'B' || userChoice == 'b'){
+            die(person, 3);
+        } else if(userChoice == 'C' || userChoice == 'c'){
+            event4(person, dis);
+        } else if(userChoice == 'S' || userChoice == 's'){
+            event4(person, dis);
+        } else if(userChoice == 'K' || userChoice == 'k'){
+            event4(person, dis); 
+        } else if(userChoice == 'G' || userChoice == 'g'){
+            event4(person, dis);
+        } else if(userChoice == 'Z' || userChoice == 'z'){
+            die(person, 3);
+        } else if(userChoice == 'T' || userChoice == 't'){
+            die(person, 3);
+        } else {
+            dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");
+            cin.ignore();
+            cin >> userChoice;
+        }
+    }
 }
 
 //obstacles for event four
@@ -153,10 +277,116 @@ void Game::event4(Person person, Display dis){
 
 //obstacles for event five
 void Game::event5(Person person,Display dis){
-    //code here
+    //all options listed in the correct order of index
+    //0: (R): Ask Ryan -- die
+    //1: (G): Use the gun/knife -- live
+    //2: (Z): skills against zombies - live
+    //3: (B): Ask Dr.Brown -- live
+    //4: (J): Ask Jessie -- die
+    //5: (D): Dig tunnel -- live
+    //6: (F): Ask Jerome -- die
+    vector<string> options{"(R) Ask Ryan to manipulate all the zombies into letting everyone go", "(G) Use the gun/knife against the zombies", "(Z) Use your skills against the zombies", "(B) Ask Dr.Brown to set a fire as a distraction", "(J) Ask Jessie to run really fast and get help", "(D) Dig a tunnel underground to get out of the parking lot", "(F) Ask Jerome to fight all the zombies to make it out of the parking lot"};
+    string event5 = "Nice choice! You made it outside of the lab! All you have to do is make it through the parking lot with your classmates. You can see the exit within a few feet. You step one foot on the pavement and find that the zombies have set up camp in the parking lot. This is where the zombies live! You have no choice but to go through the parking lot! What do you want to do now: ";
+    //display the prompt
+    dis.eventPrompt(event5);
+    char userChoice5;
+    //display the options
+    if(person.getName() == "Greta"){
+        if (person.getGun() || person.getKnife()){
+            dis.options(options.at(0), options.at(1), options.at(2));
+        } else {
+            dis.options(options.at(0), options.at(2));
+        }
+    } else if(person.getName() == "Jerome"){
+        if (person.getGun() || person.getKnife()){
+            dis.options(options.at(1), options.at(3), options.at(2));
+        } else {
+            dis.options(options.at(3), options.at(2));
+        }
+    } else if(person.getName() == "Cassidy"){
+        if (person.getGun() || person.getKnife()){
+            dis.options(options.at(3), options.at(1), options.at(4));
+        } else {
+            dis.options(options.at(3), options.at(4));
+        }
+    } else if(person.getName() == "Ryan"){
+        dis.options(options.at(5), options.at(3), options.at(2));
+    } else if(person.getName() == "Jessie"){
+        if (person.getGun() || person.getKnife()){
+            dis.options(options.at(2), options.at(1), options.at(5));
+        } else {
+            dis.options(options.at(2), options.at(5));
+        }
+    } else if(person.getName() == "Dr.Brown"){
+        if (person.getGun() || person.getKnife()){
+            dis.options(options.at(1), options.at(2), options.at(6));
+        } else {
+            dis.options(options.at(2), options.at(6));
+        }
+    }
+    //user input
+    while (true){
+        //checking to make sure than the input is a string
+        if (cin >> userChoice5) break;
+        dis.error("Please type a valid input. No numbers or symbols are allowed.");
+        cin.ignore();
+    }
+    //evaluate the user input
+    while (true){
+        if(userChoice5 == 'R' || userChoice5 == 'r'){
+            die(person, 5);
+        } else if(userChoice5 == 'G' || userChoice5 == 'g'){
+            dis.eventPrompt("Which weapon would you liek to use: ");
+            if (person.getGun()){
+                dis.status("(G) gun");
+            }
+            if (person.getKnife()){
+                dis.status("(K) knife");
+            }
+            //user input
+            while (true){
+                //checking to make sure than the input is a string
+                if (cin >> userChoice5) break;
+                dis.error("Please type a valid input. No numbers or symbols are allowed.");
+                cin.ignore();
+            }
+            //user input checking
+            while (true){
+                //checking to make sure than the input is a string
+                if (userChoice5 == 'g' || userChoice5 == 'G' || userChoice5 == 'K' || userChoice5 == 'k') break;
+                dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");
+                cin.ignore();
+            }
+            dis.finished();
+        } else if(userChoice5 == 'Z' || userChoice5 == 'z'){
+            dis.finished();
+        } else if(userChoice5 == 'B' || userChoice5 == 'b'){
+            dis.finished(); 
+        } else if(userChoice5 == 'J' || userChoice5 == 'j'){
+            die(person, 5);
+        } else if(userChoice5 == 'D' || userChoice5 == 'd'){
+            dis.finished();
+        } else if(userChoice5 == 'F' || userChoice5 == 'f'){
+            dis.finished();
+        } else {
+            dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");
+            cin.ignore();
+            cin >> userChoice5;
+        }
+    }
 }
 
 //function for what happens when a character dies
 void Game::die(Person person, int event){
-    //code here
+    if (event == 1){
+        dis.death("You were unsuccessful. Your decision led the zombies into the janitor\'s closet and they eventually caught up to you. You and your classmates turned into zombies and the zombie apocalypse has taken over the world. You lose!");    
+    } else if (event == 2){
+        dis.death("You were unsuccessful. Your decision led the zombies into the building and they eventually caught up to you. You and your classmates turned into zombies and the zombie apocalypse has taken over the world. You lose!");
+    } else if (event == 3){
+        dis.death("You were unsuccessful. Your decision led the zombies into the cafeteria and they eventually caught up to you. You and your classmates turned into zombies and the zombie apocalypse has taken over the world. You lose!");
+    } else if (event == 4){
+        dis.death("You were unsuccessful. Your decision led the zombies into the cafeteria and they eventually caught up to you. You and your classmates turned into zombies and the zombie apocalypse has taken over the world. You lose!");
+    } else if (event == 5){
+        dis.death("You were unsuccessful. Your decision led the zombies to attack you from the parking lot. You and your classmates turned into zombies and the zombie apocalypse has taken over the world. You lose!");
+    }
 }
