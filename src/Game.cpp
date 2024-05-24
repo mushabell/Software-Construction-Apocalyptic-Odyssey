@@ -391,9 +391,10 @@ void Game::die(Display dis, int event){
 }
 
 //function to call all the events
-void Game::BeginEvent(Person person, Display dis){
+void Game::BeginEvent(){
+    Display dis;
     dis.menu();
-    char name;
+    string name;
     //user input
     while (true){
         //checking to make sure than the input is a string
@@ -401,7 +402,6 @@ void Game::BeginEvent(Person person, Display dis){
         dis.error("Please type a valid input. No numbers or symbols are allowed.");
         cin.ignore();
     }
-    Display dis;
     while (true){
         //checking to make sure that they put a valid name
         if (person.getName() == "Greta" || person.getName() == "greta"){

@@ -26,5 +26,5 @@ class Game{
     public:
         //constructor
         Game(string& character, int event, bool death, bool knife, bool gun): character(character), eventNum(event), death(death), knife(knife), gun(gun){};
-        void BeginEvent(Person person, Display dis);
+        void BeginEvent();
 };
