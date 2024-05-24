@@ -77,13 +77,13 @@ void Game::event2(Person person, Display dis){
 //obstacles for event three
 void Game::event3(Person person, Display dis){
     //all options listed in the correct order of index
-    //0: (W): wait for zombies -- die
-    //1: (S): supplies in closet -- live
-    //2: (V): use the vents -- live
-    //3: (J): ask Jerome -- die
-    //4: (R): ask Ryan -- die
-    //5: (C): ask Cassidy -- die
-    //6: (Z): skills against zombie -- live
+    //0: (B) Use the butter in the cafeteria to make the door lock slippery -- die
+    //1: (C): Ask Cassidy to break the door down -- live
+    //2: (S): Use your skill against the door -- live
+    //3: (K): Try to kick the door down -- live
+    //4: (G): Ask Greta to open the door -- live
+    //5: (Z): Wait for the zombies to come break the door -- die
+    //6: (T): Dig a tunnel underground to get out of the cafeteria -- die
     vector<string> options{"(B) Use the butter in the cafeteria to make the door lock slippery", 
     "(C) Ask Cassidy to break the door down",
      "(S) Use your skill against the door", 
@@ -99,17 +99,17 @@ void Game::event3(Person person, Display dis){
     char userChoice;
     //display the options
     if(person.getName() == "Greta"){
-        dis.options(options.at(1), options.at(2), options.at(3));
+        dis.options(options.at(0), options.at(1), options.at(2));
     } else if(person.getName() == "Jerome"){
-        dis.options(options.at(4), options.at(5), options.at(3));
+        dis.options(options.at(3), options.at(4), options.at(2));
     } else if(person.getName() == "Cassidy"){
-        dis.options(options.at(3), options.at(7), options.at(5));
+        dis.options(options.at(2), options.at(6), options.at(4));
     } else if(person.getName() == "Ryan"){
-        dis.options(options.at(6), options.at(5), options.at(3));
+        dis.options(options.at(5), options.at(4), options.at(2));
     } else if(person.getName() == "Jessie"){
-        dis.options(options.at(3), options.at(5), options.at(7));
+        dis.options(options.at(2), options.at(4), options.at(6));
     } else if(person.getName() == "Dr.Brown"){
-        dis.options(options.at(1), options.at(3), options.at(5));
+        dis.options(options.at(0), options.at(2), options.at(4));
     }
     //user input
     while (true){
@@ -121,7 +121,7 @@ void Game::event3(Person person, Display dis){
     //evaluate the user input
     while (true){
         if(userChoice == 'B' || userChoice == 'b'){
-            die(person, 1);
+            die(person, 3);
         } else if(userChoice == 'C' || userChoice == 'c'){
             event4(person, dis);
         } else if(userChoice == 'S' || userChoice == 's'){
@@ -131,9 +131,9 @@ void Game::event3(Person person, Display dis){
         } else if(userChoice == 'G' || userChoice == 'g'){
             event4(person, dis);
         } else if(userChoice == 'Z' || userChoice == 'z'){
-            die(person, 1);
+            die(person, 3);
         } else if(userChoice == 'T' || userChoice == 't'){
-            die(person, 1);
+            die(person, 3);
         } else {
             dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");
             cin.ignore();
