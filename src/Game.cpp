@@ -409,7 +409,7 @@ void Game::BeginEvent(){
             dis.backstory(Greta);
             event1(Greta, dis);
         } else if (name == "Jerome" || name == "jerome"){
-            Person Jerome ("Jerome", "can only fight for 5 minutes", "mma fighter");
+            Person Jerome ("Jerome", "can only fight for 5 minutes", "MMA fighter");
             dis.backstory(Jerome);
             event1(Jerome, dis);
         } else if (name == "Cassidy" || name == "cassidy"){
