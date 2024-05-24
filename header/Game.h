@@ -10,11 +10,6 @@ using namespace std;
 
 class Game{
     private:
-        string character;
-        int eventNum; 
-        bool death;
-        bool knife;
-        bool gun;
         //functions for each event
         void event1(Person person, Display dis);
         void event2(Person person, Display dis);
