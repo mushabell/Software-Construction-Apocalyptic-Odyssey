@@ -5,8 +5,8 @@ using namespace std;
 class Person{
     private:
         string characterName;
-        bool knife;
-        bool gun;
+        bool knife = false;
+        bool gun = false;
         string strength;
         string weakness;
         int gameProgressGauge;
