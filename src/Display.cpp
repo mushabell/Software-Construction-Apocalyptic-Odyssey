@@ -30,8 +30,11 @@ void Display::death(const string& statement) {
     cout << "(R) restart" << endl;
 }
 void Display::menu() {
-    cout << 'It is currently 6:43pm on campus. There are 6 people in the classroom who are Dr.Brown, Cassidy, Jerome, Jessie, Ryan, and Greta. There had been an explosion in Dr.Heisenberg\'s lab and had caused a zombie apocalypse! You must make it off the campus to save your life! Jerome is the president of the MMA club. Greta loves to hack computer systems for fun. Cassidy is on academic probation and would lose her athletic scholarship if she does not do well in class. Ryan is very popular because he is good at manipulating people. Jessie loves to be a part of the track team and work with her geology professors. Who would you like to be: Ryan, Jessie, Dr.Brown, Cassidy, Jerome, or Greta?'<<endl;
-    cout<<'Please type the name of the character you would like to be: ';
+    cout << "It is currently 6:43pm on campus. There are 6 people in the classroom who are Dr.Brown, Cassidy, Jerome, Jessie, Ryan, and Greta. "; 
+    cout << "There had been an explosion in Dr.Heisenberg\'s lab and had caused a zombie apocalypse! You must make it off the campus to save your life! Jerome is the president of the MMA club. "; 
+    cout << "Greta loves to hack computer systems for fun. Cassidy is on academic probation and would lose her athletic scholarship if she does not do well in class. Ryan is very popular because he is good at manipulating people. ";
+    cout << "Jessie loves to be a part of the track team and work with her geology professors. Who would you like to be: Ryan, Jessie, Dr.Brown, Cassidy, Jerome, or Greta? " << endl;
+    cout << "Please type the name of the character you would like to be: ";
 }
 void Display::backstory(Person person) {
     if (person.getName() == "Greta" || person.getName() == "greta"){
