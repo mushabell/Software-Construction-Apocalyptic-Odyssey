@@ -1,12 +1,10 @@
 #include "../header/Person.h"
 
 //constructor for the person class
-Person::Person(string characterName, string characterWeakness, string characterStrength){
-    characterName = characterName;
+Person::Person(string name, string characterWeakness, string characterStrength){
+    characterName = name;
     weakness = characterWeakness;
     strength = characterStrength;
-    knife = false;
-    gun = false;
     gameProgressGauge = 0;
 }
 

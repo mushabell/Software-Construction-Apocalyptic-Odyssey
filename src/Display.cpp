@@ -37,6 +37,7 @@ void Display::menu() {
     cout << "Please type the name of the character you would like to be: ";
 }
 void Display::backstory(Person person) {
+    cout << endl;
     if (person.getName() == "Greta"){
         cout << "Hi Greta! Hope you are ready for some tough challenges. A character skill that you carry is your ability to pick locks. When you were a child, your parents would lock your favorite candy in the top cabinet with a lock. With a lot of practice, you were able to figure out how to pick the lock and can pick any lock that you want now! Now you and the people in your class must exit the campus together to survive."<< endl;
     } else if (person.getName() == "Jerome"){
