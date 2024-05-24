@@ -24,7 +24,5 @@ class Game{
         //function for what happens when a character dies
         void die(Display dis, int event);
     public:
-        //constructor
-        Game(string& character, int event, bool death, bool knife, bool gun): character(character), eventNum(event), death(death), knife(knife), gun(gun){};
         void BeginEvent();
 };
