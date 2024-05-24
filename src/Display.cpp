@@ -4,39 +4,39 @@
 
 using namespace std;
     
-void Display::eventPrompt(const string& statement) {
+void Display::eventPrompt(const string& statement) const{
     cout << statement << endl;
 }
-void Display::options(const string& option1, const string& option2, const string& option3) {
+void Display::options(const string& option1, const string& option2, const string& option3) const{
     cout << option1 << endl;
     cout << option2 << endl;
     cout << option3 << endl;
     cout << endl;
 }
-void Display::options(const string& option1, const string& option2){
+void Display::options(const string& option1, const string& option2) const{
     cout << option1 << endl;
     cout << option2 << endl;
     cout << endl;
 }
-void Display::status(const string& statement) {
+void Display::status(const string& statement) const{
     cout << statement << endl;
     cout << endl;
 }
-void Display::death(const string& statement) {
+void Display::death(const string& statement) const{
     cout << statement << endl;
     cout << endl;
     cout << "End of game. Would you like to play again or quit?"<< endl;
     cout << "(Q) quit" << endl;
     cout << "(R) restart" << endl;
 }
-void Display::menu() {
+void Display::menu() const{
     cout << "It is currently 6:43pm on campus. There are 6 people in the classroom who are Dr.Brown, Cassidy, Jerome, Jessie, Ryan, and Greta. "; 
     cout << "There had been an explosion in Dr.Heisenberg\'s lab and had caused a zombie apocalypse! You must make it off the campus to save your life! Jerome is the president of the MMA club. "; 
     cout << "Greta loves to hack computer systems for fun. Cassidy is on academic probation and would lose her athletic scholarship if she does not do well in class. Ryan is very popular because he is good at manipulating people. ";
     cout << "Jessie loves to be a part of the track team and work with her geology professors. Who would you like to be: Ryan, Jessie, Dr.Brown, Cassidy, Jerome, or Greta? " << endl;
     cout << "Please type the name of the character you would like to be: ";
 }
-void Display::backstory(Person person) {
+void Display::backstory(Person person) const{
     cout << endl;
     if (person.getName() == "Greta"){
         cout << "Hi Greta! Hope you are ready for some tough challenges. A character skill that you carry is your ability to pick locks. When you were a child, your parents would lock your favorite candy in the top cabinet with a lock. With a lot of practice, you were able to figure out how to pick the lock and can pick any lock that you want now! Now you and the people in your class must exit the campus together to survive."<< endl;
@@ -57,10 +57,10 @@ void Display::backstory(Person person) {
         cout << endl;
     }
 }
-void Display::error(const string& statement){
+void Display::error(const string& statement) const{
     cout << statement << endl;
     cout << endl;
 }
-void Display::finished(){
+void Display::finished() const{
     cout<<"Congratulations! You made it out of the parking lot and you and your classmates made it out from the campus! You are officially saved from the zombie apocalypse! When you exited the campus, the military was able to figure out a cure for the zombie infection and was able to reverse the zombies back to humans!"<<endl;
 }
