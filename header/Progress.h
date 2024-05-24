@@ -9,5 +9,5 @@ using namespace std;
 class Progress {
     public:
         void updateGauge(Person person, Game g);
-        void DisplayProgressHelper() const;
+        void displayProgressHelper() const;
 };
