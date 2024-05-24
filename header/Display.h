@@ -16,4 +16,5 @@ class Display {
         void menu();
         void backstory(Person person);
         void error(const string& statement);
+        void finished();
 };
