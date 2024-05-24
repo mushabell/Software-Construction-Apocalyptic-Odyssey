@@ -123,8 +123,10 @@ void Game::event4(Person person, Display dis){
         if(userchoice == 'U' || userchoice == 'u'){
             dis.options(options.at(7), options.at(8));
             if(userchoice == 'G' || userchoice == 'g'){
+                person.updateGun(false);
                 event5(person, dis);
             } else if(userchoice == 'K' || userchoice == 'k'){
+                person.updateKnife(false);
                 event5(person, dis);
             }
         } else if(userchoice == 'S' || userchoice == 's'){
