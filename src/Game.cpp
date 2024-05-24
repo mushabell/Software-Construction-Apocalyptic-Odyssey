@@ -404,28 +404,28 @@ void Game::BeginEvent(){
     }
     while (true){
         //checking to make sure that they put a valid name
-        if (person.getName() == "Greta" || person.getName() == "greta"){
-            Person Greta = Person("Greta", "can not see without glasses", "good lock picker");
+        if (name == "Greta" || name == "greta"){
+            Person Greta("Greta", "can not see without glasses", "good lock picker");
             dis.backstory(Greta);
             event1(Greta, dis);
-        } else if (person.getName() == "Jerome" || person.getName() == "jerome"){
-            Person Jerome = Person("Jerome", "can only fight for 5 minutes", "mma fighter");
+        } else if (name == "Jerome" || name == "jerome"){
+            Person Jerome ("Jerome", "can only fight for 5 minutes", "mma fighter");
             dis.backstory(Jerome);
             event1(Jerome, dis);
-        } else if (person.getName() == "Cassidy" || person.getName() == "cassidy"){
-            Person Cassidy = Person("Cassidy", "has a bad attitude", "strength");
+        } else if (name == "Cassidy" || name == "cassidy"){
+            Person Cassidy ("Cassidy", "has a bad attitude", "strength");
             dis.backstory(Cassidy);
             event1(Cassidy, dis);
-        } else if (person.getName() == "Dr.Brown" || person.getName() == "dr.brown" || person.getName() == "Dr.brown" || person.getName() == "dr.Brown"){
-            Person DrBrown = Person("Dr.Brown", "can not run fast", "fire making glasses");
+        } else if (name == "Dr.Brown" || name == "dr.brown" || name == "Dr.brown" || name == "dr.Brown"){
+            Person DrBrown ("Dr.Brown", "can not run fast", "fire making glasses");
             dis.backstory(DrBrown);
             event1(DrBrown, dis);
-        } else if (person.getName() == "Jessie" || person.getName() == "jessie"){
-            Person Jessie = Person("Jessie", "very clumsy", "fast runner");
+        } else if (name == "Jessie" || name == "jessie"){
+            Person Jessie ("Jessie", "very clumsy", "fast runner");
             dis.backstory(Jessie);
             event1(Jessie, dis);
-        } else if (person.getName() == "Ryan" || person.getName() == "ryan"){
-            Person Ryan = Person("Ryan", "arm is injured in a cast", "good manipulator");
+        } else if (name == "Ryan" || name == "ryan"){
+            Person Ryan ("Ryan", "arm is injured in a cast", "good manipulator");
             dis.backstory(Ryan);
             event1(Ryan, dis);
         } else {
