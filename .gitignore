@@ -5,3 +5,4 @@ CMakeFiles
 cmake_instal.cmake
 CMakeCache.txt
 runAllTests
+a.out
