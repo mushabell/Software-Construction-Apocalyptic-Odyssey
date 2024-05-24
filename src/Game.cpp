@@ -4,7 +4,6 @@
 #include <vector>
 using namespace std;
 
-//hello
 //obstacles for event one
 void Game::event1(Person person, Display dis){
     //all options listed in the correct order of index
