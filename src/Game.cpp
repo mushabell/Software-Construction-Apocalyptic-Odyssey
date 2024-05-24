@@ -187,19 +187,14 @@ void Game::event5(Person person,Display dis){
 //function for what happens when a character dies
 void Game::die(Person person, int event, Display dis){
     if (event == 1){
-        dis.death("You were unsuccessful. Your decision led the zombies into the janitor\'s closet and they eventually caught up to you. You and your classmates turned into zombies and the zombie apocalypse has taken over the world. You lose!");
-        dis.finished();    
+        dis.death("You were unsuccessful. Your decision led the zombies into the janitor\'s closet and they eventually caught up to you. You and your classmates turned into zombies and the zombie apocalypse has taken over the world. You lose!");    
     } else if (event == 1){
         dis.death("You were unsuccessful. Your decision led the zombies into the building and they eventually caught up to you. You and your classmates turned into zombies and the zombie apocalypse has taken over the world. You lose!");
-        dis.finished();
     } else if (event == 1){
         dis.death("You were unsuccessful. Your decision led the zombies into the cafeteria and they eventually caught up to you. You and your classmates turned into zombies and the zombie apocalypse has taken over the world. You lose!");
-        dis.finished();
     } else if (event == 1){
         dis.death("You were unsuccessful. Your decision led the zombies into the cafeteria and they eventually caught up to you. You and your classmates turned into zombies and the zombie apocalypse has taken over the world. You lose!");
-        dis.finished();
     } else if (event == 1){
         dis.death("You were unsuccessful. Your decision led the zombies to attack you from the parking lot. You and your classmates turned into zombies and the zombie apocalypse has taken over the world. You lose!");
-        dis.finished();
     }
 }
