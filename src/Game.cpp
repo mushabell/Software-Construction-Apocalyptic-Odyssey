@@ -428,6 +428,10 @@ void Game::BeginEvent(Person person, Display dis){
             Person Ryan = Person("Ryan", "arm is injured in a cast", "good manipulator");
             dis.backstory(Ryan);
             event1(Ryan, dis);
+        } else {
+            dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");
+            cin.ignore();
+            cin >> name;
         }
     }
 }
