@@ -14,4 +14,4 @@ void Progress::updateGauge(Person person, Game g) {
 //helper function
 void Progress::displayProgressHelper() const {
     //shows progress -- for user
- }
+}
