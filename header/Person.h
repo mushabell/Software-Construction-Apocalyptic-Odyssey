@@ -14,10 +14,10 @@ class Person{
         Person(string characterName, string characterWeakness, string characterStrength);
         void updateGun(bool status);
         void updateKnife(bool status);
-        string getName();
+        string getName() const;
         void updateProgress(int level);
-        string getStrength();
-        string getWeakness();
-        bool getGun();
-        bool getKnife();
+        string getStrength() const;
+        string getWeakness() const;
+        bool getGun() const;
+        bool getKnife() const;
     };

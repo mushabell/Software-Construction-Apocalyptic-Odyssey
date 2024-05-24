@@ -19,7 +19,7 @@ void Person::updateKnife(bool status){
 }
 
 //return the chatacter's name 
-string Person::getName(){
+string Person::getName() const{
     return (characterName);
 }
 
@@ -30,21 +30,21 @@ void Person::updateProgress(int level){
 
 
 //return the strength of the person
-string Person::getStrength(){
+string Person::getStrength() const{
     return(strength);
 }
 
 //return the weakness of the person
-string Person::getWeakness(){
+string Person::getWeakness() const{
     return(weakness);
 }
 
 //return the status of the gun
-bool Person::getGun(){
+bool Person::getGun() const{
     return(gun);
 }
 
 //return the status of the knife
-bool Person::getKnife(){
+bool Person::getKnife() const{
     return(knife);
 }
