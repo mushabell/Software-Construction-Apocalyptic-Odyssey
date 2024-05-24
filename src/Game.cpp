@@ -48,17 +48,17 @@ void Game::event1(Person person, Display dis){
     //evaluate the user input
     while (true){
         if(userChoice == 'W' || userChoice == 'w'){
-            die(person, 1);
+            die(dis, 1);
         } else if(userChoice == 'S' || userChoice == 's'){
             event2(person, dis);
         } else if(userChoice == 'V' || userChoice == 'v'){
             event2(person, dis);
         } else if(userChoice == 'J' || userChoice == 'j'){
-            die(person, 1); 
+            die(dis, 1); 
         } else if(userChoice == 'R' || userChoice == 'r'){
-            die(person, 1);
+            die(dis, 1);
         } else if(userChoice == 'C' || userChoice == 'c'){
-            die(person, 1);
+            die(dis, 1);
         } else if(userChoice == 'Z' || userChoice == 'z'){
             event2(person, dis);
         } else {
@@ -111,7 +111,7 @@ void Game::event2(Person person, Display dis){
     //evaluate the user input
     while (true){
         if(userChoice == 'H' || userChoice == 'h'){
-            die(person, 2);
+            die(dis, 2);
         } else if(userChoice == 'J' || userChoice == 'j'){
             event3(person, dis);
         } else if(userChoice == 'Z' || userChoice == 'z'){
@@ -119,11 +119,11 @@ void Game::event2(Person person, Display dis){
         } else if(userChoice == 'D' || userChoice == 'd'){
             event3(person, dis);
         } else if(userChoice == 'R' || userChoice == 'r'){
-            die(person, 2);
+            die(dis, 2);
         } else if(userChoice == 'M' || userChoice == 'm'){
-            die(person, 2);
+            die(dis, 2);
         } else if(userChoice == 'W' || userChoice == 'w'){
-            die(person, 2);
+            die(dis, 2);
         } else if(userChoice == 'B' || userChoice == 'b'){
             event3(person,dis);
         } else {
@@ -182,7 +182,7 @@ void Game::event3(Person person, Display dis){
     //evaluate the user input
     while (true){
         if(userChoice == 'B' || userChoice == 'b'){
-            die(person, 3);
+            die(dis, 3);
         } else if(userChoice == 'C' || userChoice == 'c'){
             event4(person, dis);
         } else if(userChoice == 'S' || userChoice == 's'){
@@ -192,9 +192,9 @@ void Game::event3(Person person, Display dis){
         } else if(userChoice == 'G' || userChoice == 'g'){
             event4(person, dis);
         } else if(userChoice == 'Z' || userChoice == 'z'){
-            die(person, 3);
+            die(dis, 3);
         } else if(userChoice == 'T' || userChoice == 't'){
-            die(person, 3);
+            die(dis, 3);
         } else {
             dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");
             cin.ignore();
@@ -255,15 +255,15 @@ void Game::event4(Person person, Display dis){
                 event5(person, dis);
             }
         } else if(userchoice == 'S' || userchoice == 's'){
-            die(person, 4); 
+            die(dis, 4); 
         } else if(userchoice == 'R' || userchoice == 'r'){
-            die(person, 4); 
+            die(dis, 4); 
         } else if(userchoice == 'M' || userchoice == 'm'){
             event5(person, dis);
         } else if(userchoice == 'P' || userchoice == 'p'){
             event5(person, dis);
         } else if(userchoice == 'H' || userchoice == 'h'){
-            die(person, 1);
+            die(dis, 4); 
         } else if(userchoice == 'F' || userchoice == 'f'){
             event5(person, dis);
         } else {
@@ -334,9 +334,9 @@ void Game::event5(Person person,Display dis){
     //evaluate the user input
     while (true){
         if(userChoice5 == 'R' || userChoice5 == 'r'){
-            die(person, 5);
+            die(dis, 5);
         } else if(userChoice5 == 'G' || userChoice5 == 'g'){
-            dis.eventPrompt("Which weapon would you liek to use: ");
+            dis.eventPrompt("Which weapon would you like to use: ");
             if (person.getGun()){
                 dis.status("(G) gun");
             }
@@ -363,7 +363,7 @@ void Game::event5(Person person,Display dis){
         } else if(userChoice5 == 'B' || userChoice5 == 'b'){
             dis.finished(); 
         } else if(userChoice5 == 'J' || userChoice5 == 'j'){
-            die(person, 5);
+            die(dis, 5);
         } else if(userChoice5 == 'D' || userChoice5 == 'd'){
             dis.finished();
         } else if(userChoice5 == 'F' || userChoice5 == 'f'){
@@ -377,7 +377,7 @@ void Game::event5(Person person,Display dis){
 }
 
 //function for what happens when a character dies
-void Game::die(Person person, int event){
+void Game::die(Display dis, int event){
     if (event == 1){
         dis.death("You were unsuccessful. Your decision led the zombies into the janitor\'s closet and they eventually caught up to you. You and your classmates turned into zombies and the zombie apocalypse has taken over the world. You lose!");    
     } else if (event == 2){

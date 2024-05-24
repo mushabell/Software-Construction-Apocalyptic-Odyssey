@@ -18,12 +18,6 @@ void Display::options(const string& option1, const string& option2){
     cout << option2 << endl;
     cout << endl;
 }
-void Display::options(const string& option1, const string& option2) {
-    // Print options per event
-}
-void Display::options(const string& option1, const string& option2){
-    //Print options per event
-}
 void Display::status(const string& statement) {
     cout << statement << endl;
     cout << endl;
