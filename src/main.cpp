@@ -1,7 +1,7 @@
-#include "Display.h"
-#include "Game.h"
-#include "Person.h"
-#include "Progress.h"
+#include "../header/Display.h"
+#include "../header/Game.h"
+#include "../header/Person.h"
+#include "../header/Progress.h"
 
 using namespace std;
 
