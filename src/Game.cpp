@@ -186,5 +186,7 @@ void Game::event5(Person person,Display dis){
 
 //function for what happens when a character dies
 void Game::die(Person person, int event){
-    //code here
+    if (event == 1){
+        dis.
+    }
 }
