@@ -71,7 +71,68 @@ void Game::event1(Person person, Display dis){
 
 //obstacles for event two
 void Game::event2(Person person, Display dis){
-    //code here
+   //all options listed in the correct order of index
+   //0: (H) Hide in the building -- die
+   //1: (J) Ask Jerome -- live
+   //2: (Z) Use your skills against zombie -- live
+   //3: (D) Dig a tunnel underground to get out -- live
+   //4: (R) Ask Ryan to manipulate the zombies -- die
+   //5: (M) Carry a mirror with you -- die
+   //6: (W) Wait for the zombies -- die
+   //7: (B) Ask Dr. Brown -- live
+   vector<string> options{"(H) Hide in the building until there is only a little bit of zombies outside", "(J) Ask Jerome to go outside and use his MMA skills to fight the zombies", "(Z) Use your skills against the zombies", "(D) Dig a tunnel underground to get out of the building without getting attacked by zombies",
+   "(R) Ask Ryan to manipulate the zombies into letting all of you go", "(M) Carry a mirror with you so every time a zombie comes near you, they only see their own reflection", "(W) Wait for the zombies to leave and then exit the building", "(B) Ask Dr. Brown to set a fire outside to distract the zombies"};
+  
+   string event2 = "Nice choice, you made it out of the janitor’s closet! You continue to walk towards the exit of the building. Right before you open the door you notice a bunch of zombies walking around the campus. What do you want to do: ";
+    //display the prompt
+    dis.eventPrompt(event2);
+    char userChoice;
+    //display the options
+    if(person.getName() == "Greta"){
+        dis.options(options.at(0), options.at(1), options.at(2));
+    } else if(person.getName() == "Jerome"){
+        dis.options(options.at(3), options.at(4), options.at(2));
+    } else if(person.getName() == "Cassidy"){
+        dis.options(options.at(2), options.at(5), options.at(3));
+    } else if(person.getName() == "Ryan"){
+        dis.options(options.at(6), options.at(7), options.at(2));
+    } else if(person.getName() == "Jessie"){
+        dis.options(options.at(2), options.at(7), options.at(6));
+    } else if(person.getName() == "Dr.Brown"){
+        dis.options(options.at(6), options.at(2), options.at(4));
+    }
+    //user input
+    while (true){
+        //checking to make sure than the input is a string
+        if (cin >> userChoice) break;
+        dis.error("Please type a valid input. No numbers or symbols are allowed.");
+        cin.ignore();
+    }
+    //evaluate the user input
+    while (true){
+        if(userChoice == 'H' || userChoice == 'h'){
+            die(person, 2);
+        } else if(userChoice == 'J' || userChoice == 'j'){
+            event3(person, dis);
+        } else if(userChoice == 'Z' || userChoice == 'z'){
+            event3(person, dis);
+        } else if(userChoice == 'D' || userChoice == 'd'){
+            event3(person, dis);
+        } else if(userChoice == 'R' || userChoice == 'r'){
+            die(person, 2);
+        } else if(userChoice == 'M' || userChoice == 'm'){
+            die(person, 2);
+        } else if(userChoice == 'W' || userChoice == 'w'){
+            die(person, 2);
+        } else if(userChoice == 'B' || userChoice == 'b'){
+            event3(person,dis);
+        } else {
+            dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");
+            cin.ignore();
+            cin >> userChoice;
+        }
+    }
+
 }
 
 //obstacles for event three
