@@ -389,3 +389,49 @@ void Game::die(Display dis, int event){
         dis.death("You were unsuccessful. Your decision led the zombies to attack you from the parking lot. You and your classmates turned into zombies and the zombie apocalypse has taken over the world. You lose!");
     }
 }
+
+//function to call all the events
+void Game::BeginEvent(){
+    Display dis;
+    dis.menu();
+    string name;
+    //user input
+    while (true){
+        //checking to make sure than the input is a string
+        if (cin >> name) break;
+        dis.error("Please type a valid input. No numbers or symbols are allowed.");
+        cin.ignore();
+    }
+    while (true){
+        //checking to make sure that they put a valid name
+        if (name == "Greta" || name == "greta"){
+            Person Greta("Greta", "can not see without glasses", "good lock picker");
+            dis.backstory(Greta);
+            event1(Greta, dis);
+        } else if (name == "Jerome" || name == "jerome"){
+            Person Jerome ("Jerome", "can only fight for 5 minutes", "mma fighter");
+            dis.backstory(Jerome);
+            event1(Jerome, dis);
+        } else if (name == "Cassidy" || name == "cassidy"){
+            Person Cassidy ("Cassidy", "has a bad attitude", "strength");
+            dis.backstory(Cassidy);
+            event1(Cassidy, dis);
+        } else if (name == "Dr.Brown" || name == "dr.brown" || name == "Dr.brown" || name == "dr.Brown"){
+            Person DrBrown ("Dr.Brown", "can not run fast", "fire making glasses");
+            dis.backstory(DrBrown);
+            event1(DrBrown, dis);
+        } else if (name == "Jessie" || name == "jessie"){
+            Person Jessie ("Jessie", "very clumsy", "fast runner");
+            dis.backstory(Jessie);
+            event1(Jessie, dis);
+        } else if (name == "Ryan" || name == "ryan"){
+            Person Ryan ("Ryan", "arm is injured in a cast", "good manipulator");
+            dis.backstory(Ryan);
+            event1(Ryan, dis);
+        } else {
+            dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");
+            cin.ignore();
+            cin >> name;
+        }
+    }
+}
