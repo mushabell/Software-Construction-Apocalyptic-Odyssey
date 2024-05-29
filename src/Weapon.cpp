@@ -1,5 +1,9 @@
 #include <Weapon.h>
 
-string Weapon::getstory(){
-    return WeaponStory;
+string Weapon::getStory(){
+    return story;
+}
+
+string Weapon::getType(){
+    return type;
 }

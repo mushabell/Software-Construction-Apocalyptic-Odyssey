@@ -7,8 +7,10 @@ using namespace std;
 
 class Weapon{
     protected:
-        string WeaponStory;
+        string story;
+        string type;
     public:
-        Weapon(string WeaponStory) : WeaponStory(WeaponStory){}
-        string getstory();
+        Weapon(string s, string t) : story(s), type(t) {}
+        string getStory();
+        string getType();
 };
