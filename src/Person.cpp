@@ -2,6 +2,9 @@
 #include "../header/Weapon.h"
 #include "../header/Knife.h"
 #include "../header/Gun.h"
+#include <iostream>
+#include <vector>
+using namespace std;
 
 //constructor for the person class
 Person::Person(string name, string characterWeakness, string characterStrength){
@@ -33,7 +36,7 @@ string Person::getWeakness() const{
 }
 
 //addds a weapon to the vecotr 
-void Person::addWeapon(string &weaponType){
+void Person::addWeapon(string weaponType){
     if (weaponType == "knife"){
         Weapon knife("this is the story of the knife", "knife");
         weapons.push_back(knife);
@@ -44,7 +47,7 @@ void Person::addWeapon(string &weaponType){
 }
 
 //checks to see if the weapon is there
-bool Person::checkWeapon(string &weaponType){
+bool Person::checkWeapon(string weaponType){
     for (int i = 0; i < weapons.size(); i++){
         if (weapons[i].getType() == weaponType){
             return true;
@@ -53,7 +56,7 @@ bool Person::checkWeapon(string &weaponType){
 }
 
 //remove the weapon from the vector
-void Person::removeWeapon(string &weaponType){
+void Person::removeWeapon(string weaponType){
     for (int i =0; i < weapons.size(); i++){
         if (weapons[i].getType() == weaponType){
             vector<Weapon>::iterator iterator;

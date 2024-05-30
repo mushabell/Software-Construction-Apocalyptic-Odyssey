@@ -155,7 +155,7 @@ void Game::event3(Person person, Display dis){
     string event3 = "Nice choice! You made it outside of the building! You decide to go through the cafeteria to choose the shortest path to get off the campus as fast as possible. When you enter the cafeteria you see that the building is empty. You and your classmates enter the main hall and the door closes behind you. You notice a knife on the floor and pick it up for protection. You walk across the hall and try to open the door behind you but you can not! What do you want to do now?";
     //display the prompt
     dis.eventPrompt(event3);
-    person.updateKnife(true);
+    person.addWeapon("knife");
     char userChoice;
     //display the options
     if(person.getName() == "Greta"){
@@ -222,7 +222,7 @@ void Game::event4(Person person, Display dis){
     string event4 = "Nice choice, you made it out of the cafeteria! You only have to make it through the science lab and the parking lot to exit the campus. You walk by the science lab and notice a shortcut through the lab. You decide to take the shortcut and enter the lab. When you enter the lab you find a gun on the floor with three bullets. You pick it up for safety. As you are about to exit the lab, zombies come out from the corner of the lab! What do you want to do:";
     dis.eventPrompt(event4);
     char userchoice;
-    person.updateGun(true);
+    person.addWeapon("gun");
 
     if(person.getName() == "Greta"){
         dis.options(options.at(0), options.at(1), options.at(2));
@@ -247,10 +247,10 @@ void Game::event4(Person person, Display dis){
         if(userchoice == 'U' || userchoice == 'u'){
             dis.options(options.at(7), options.at(8));
             if(userchoice == 'G' || userchoice == 'g'){
-                person.updateGun(false);
+                person.removeWeapon("gun");
                 event5(person, dis);
             } else if(userchoice == 'K' || userchoice == 'k'){
-                person.updateKnife(false);
+                person.removeWeapon("knife");
                 event5(person, dis);
             }
         } else if(userchoice == 'S' || userchoice == 's'){
@@ -291,19 +291,19 @@ void Game::event5(Person person,Display dis){
     char userChoice5;
     //display the options
     if(person.getName() == "Greta"){
-        if (person.getGun() || person.getKnife()){
+        if (person.checkWeapon("gun") || person.checkWeapon("knife")){
             dis.options(options.at(0), options.at(1), options.at(2));
         } else {
             dis.options(options.at(0), options.at(2));
         }
     } else if(person.getName() == "Jerome"){
-        if (person.getGun() || person.getKnife()){
+        if (person.checkWeapon("gun") || person.checkWeapon("knife")){
             dis.options(options.at(1), options.at(3), options.at(2));
         } else {
             dis.options(options.at(3), options.at(2));
         }
     } else if(person.getName() == "Cassidy"){
-        if (person.getGun() || person.getKnife()){
+        if (person.checkWeapon("gun") || person.checkWeapon("knife")){
             dis.options(options.at(3), options.at(1), options.at(4));
         } else {
             dis.options(options.at(3), options.at(4));
@@ -311,13 +311,13 @@ void Game::event5(Person person,Display dis){
     } else if(person.getName() == "Ryan"){
         dis.options(options.at(5), options.at(3), options.at(2));
     } else if(person.getName() == "Jessie"){
-        if (person.getGun() || person.getKnife()){
+        if (person.checkWeapon("gun") || person.checkWeapon("knife")){
             dis.options(options.at(2), options.at(1), options.at(5));
         } else {
             dis.options(options.at(2), options.at(5));
         }
     } else if(person.getName() == "Dr.Brown"){
-        if (person.getGun() || person.getKnife()){
+        if (person.checkWeapon("gun") || person.checkWeapon("knife")){
             dis.options(options.at(1), options.at(2), options.at(6));
         } else {
             dis.options(options.at(2), options.at(6));
@@ -336,10 +336,10 @@ void Game::event5(Person person,Display dis){
             die(dis, 5);
         } else if(userChoice5 == 'G' || userChoice5 == 'g'){
             dis.eventPrompt("Which weapon would you like to use: ");
-            if (person.getGun()){
+            if (person.checkWeapon("gun")){
                 dis.status("(G) gun");
             }
-            if (person.getKnife()){
+            if (person.checkWeapon("knife")){
                 dis.status("(K) knife");
             }
             //user input

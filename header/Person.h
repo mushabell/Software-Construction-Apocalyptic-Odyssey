@@ -17,7 +17,7 @@ class Person{
         void updateProgress(int level);
         string getStrength() const;
         string getWeakness() const;
-        void addWeapon(string &weaponType);
-        bool checkWeapon(string &weaponType);
-        void removeWeapon(string &weaponType);
+        void addWeapon(string weaponType);
+        bool checkWeapon(string weaponType);
+        void removeWeapon(string weaponType);
     };
