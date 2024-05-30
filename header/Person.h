@@ -1,12 +1,13 @@
 #pragma once
 #include <string>
+#include<vector>
+#include "Weapon.h"
 using namespace std;
 
 class Person{
     private:
         string characterName;
-        bool knife = false;
-        bool gun = false;
+        vector<Weapon> weapons;
         string strength;
         string weakness;
         int gameProgressGauge;
@@ -18,6 +19,7 @@ class Person{
         void updateProgress(int level);
         string getStrength() const;
         string getWeakness() const;
-        bool getGun() const;
-        bool getKnife() const;
+        void addWeapon(string &weaponType);
+        bool checkWeapon(string &weaponType);
+        void removeWeapon(string &weaponType);
     };
