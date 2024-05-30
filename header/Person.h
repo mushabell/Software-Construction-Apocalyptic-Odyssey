@@ -13,8 +13,6 @@ class Person{
         int gameProgressGauge;
     public:
         Person(string characterName, string characterWeakness, string characterStrength);
-        void updateGun(bool status);
-        void updateKnife(bool status);
         string getName() const;
         void updateProgress(int level);
         string getStrength() const;
