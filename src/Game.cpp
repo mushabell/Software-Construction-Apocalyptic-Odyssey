@@ -286,6 +286,7 @@ void Game::event4(Person person, Display dis){
         } else if(userchoice == 'M' || userchoice == 'm'){
             person.addToPath(options.at(3));
             event5(person, dis);
+            return;
         } else if(userchoice == 'P' || userchoice == 'p'){
             person.addToPath(options.at(4));
             event5(person, dis);
