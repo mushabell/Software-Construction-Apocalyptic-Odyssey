@@ -5,6 +5,7 @@ add_library(simpleLibrary
     Person.cpp
     Progress.cpp
     main.cpp
+    Weapon.cpp
 )
 
 find_library(M_LIB m)

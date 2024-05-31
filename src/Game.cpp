@@ -50,10 +50,12 @@ void Game::event1(Person person, Display dis){
             person.addToPath(options.at(0));
             die(dis, 1);
         } else if(userChoice == 'S' || userChoice == 's'){
+            person.updateProgress();
             person.addToPath(options.at(1));
             event2(person, dis);
         } else if(userChoice == 'V' || userChoice == 'v'){
-            person.addToPath(options.at(2));
+          person.updateProgress();  
+          person.addToPath(options.at(2));
             event2(person, dis);
         } else if(userChoice == 'J' || userChoice == 'j'){
             person.addToPath(options.at(3));
@@ -65,6 +67,7 @@ void Game::event1(Person person, Display dis){
             person.addToPath(options.at(5));
             die(dis, 1);
         } else if(userChoice == 'Z' || userChoice == 'z'){
+            person.updateProgress();
             person.addToPath(options.at(6));
             event2(person, dis);
         } else {
@@ -121,12 +124,15 @@ void Game::event2(Person person, Display dis){
             die(dis, 2);
         } else if(userChoice == 'J' || userChoice == 'j'){
             person.addToPath(options.at(1));
+            person.updateProgress();
             event3(person, dis);
         } else if(userChoice == 'Z' || userChoice == 'z'){
             person.addToPath(options.at(2));
+            person.updateProgress();
             event3(person, dis);
         } else if(userChoice == 'D' || userChoice == 'd'){
             person.addToPath(options.at(3));
+            person.updateProgress();
             event3(person, dis);
         } else if(userChoice == 'R' || userChoice == 'r'){
             person.addToPath(options.at(4));
@@ -138,6 +144,7 @@ void Game::event2(Person person, Display dis){
             person.addToPath(options.at(6));
             die(dis, 2);
         } else if(userChoice == 'B' || userChoice == 'b'){
+            person.updateProgress();
             person.addToPath(options.at(7));
             event3(person,dis);
         } else {
@@ -199,15 +206,19 @@ void Game::event3(Person person, Display dis){
             person.addToPath(options.at(0));
             die(dis, 3);
         } else if(userChoice == 'C' || userChoice == 'c'){
+            person.updateProgress();
             person.addToPath(options.at(1));
             event4(person, dis);
         } else if(userChoice == 'S' || userChoice == 's'){
+            person.updateProgress();
             person.addToPath(options.at(2));
             event4(person, dis);
         } else if(userChoice == 'K' || userChoice == 'k'){
+            person.updateProgress();
             person.addToPath(options.at(3));
             event4(person, dis); 
         } else if(userChoice == 'G' || userChoice == 'g'){
+            person.updateProgress();
             person.addToPath(options.at(4));
             event4(person, dis);
         } else if(userChoice == 'Z' || userChoice == 'z'){
@@ -270,10 +281,12 @@ void Game::event4(Person person, Display dis){
             dis.options(options.at(7), options.at(8));
             if(userchoice == 'G' || userchoice == 'g'){
                 person.removeWeapon("gun");
+                person.updateProgress();
                 person.addToPath(options.at(7));
                 event5(person, dis);
             } else if(userchoice == 'K' || userchoice == 'k'){
                 person.removeWeapon("knife");
+                person.updateProgress();
                 person.addToPath(options.at(8));
                 event5(person, dis);
             }
@@ -284,16 +297,19 @@ void Game::event4(Person person, Display dis){
             person.addToPath(options.at(2));
             die(dis, 4); 
         } else if(userchoice == 'M' || userchoice == 'm'){
+            person.updateProgress();
             person.addToPath(options.at(3));
             event5(person, dis);
             return;
         } else if(userchoice == 'P' || userchoice == 'p'){
+            person.updateProgress();
             person.addToPath(options.at(4));
             event5(person, dis);
         } else if(userchoice == 'H' || userchoice == 'h'){
             person.addToPath(options.at(5));
             die(dis, 4); 
         } else if(userchoice == 'F' || userchoice == 'f'){
+            person.updateProgress();
             person.addToPath(options.at(6));
             event5(person, dis);
         } else {
@@ -306,7 +322,7 @@ void Game::event4(Person person, Display dis){
 
 
 //obstacles for event five
-void Game::event5(Person person,Display dis){
+void Game::event5(Person person, Display dis){
     //all options listed in the correct order of index
     //0: (R): Ask Ryan -- die
     //1: (G): Use the gun/knife -- live
@@ -388,6 +404,7 @@ void Game::event5(Person person,Display dis){
                 dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");
                 cin.ignore();
             }
+            person.updateProgress();
             if (userChoice5 == 'g' || userChoice5 == 'G') {
                 person.addToPath("(G) Use a gun to kill the zombies");
             }
@@ -396,14 +413,18 @@ void Game::event5(Person person,Display dis){
             }
             dis.finished();
         } else if(userChoice5 == 'Z' || userChoice5 == 'z'){
+            person.updateProgress();
             dis.finished();
         } else if(userChoice5 == 'B' || userChoice5 == 'b'){
-            dis.finished(); 
+            person.updateProgress();
+            dis.finished();
         } else if(userChoice5 == 'J' || userChoice5 == 'j'){
             die(dis, 5);
         } else if(userChoice5 == 'D' || userChoice5 == 'd'){
+            person.updateProgress();
             dis.finished();
         } else if(userChoice5 == 'F' || userChoice5 == 'f'){
+            person.updateProgress();
             dis.finished();
         } else {
             dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");

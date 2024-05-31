@@ -20,10 +20,16 @@ string Person::getName() const{
 }
 
 //update the progress based on a a percentage scale
-void Person::updateProgress(int level){
-    gameProgressGauge = level *20;
+void Person::updateProgress(){
+    if (gameProgressGauge == 0) {
+        gameProgressGauge = 20;
+    }
+    gameProgressGauge = gameProgressGauge + 20;
 }
 
+int Person::getGameProgress() const{
+    return gameProgressGauge;
+}
 
 //return the strength of the person
 string Person::getStrength() const{
@@ -53,6 +59,7 @@ bool Person::checkWeapon(string weaponType){
             return true;
         }
     }
+    return false;
 }
 
 //remove the weapon from the vector
