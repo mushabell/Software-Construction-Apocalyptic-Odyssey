@@ -111,7 +111,7 @@ TEST(Backstory, testRyan) {
     EXPECT_EQ(outStreamOne.str(), expectedBackstory);
 }
 
-TEST(GameTests, testEvent3_Greta) {
+TEST(Event3, GretaChoiceB) {
     Game game;
     Person person("Greta", "can not see without glasses", "good lock picker");
     Display display;
