@@ -19,10 +19,13 @@ void Progress::menu(Person person, Display dis){
     while(true){
         if (userChoice == 'I' || userChoice == 'i'){
             info(person, dis);
+            return;
         } else if (userChoice == 'P' || userChoice == 'p'){
             dis.gameProgress(person);
+            return;
         } else if (userChoice == 'Q' || userChoice == 'q'){
             //do something
+            return;
         } else {
             dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");
             cin.ignore();
