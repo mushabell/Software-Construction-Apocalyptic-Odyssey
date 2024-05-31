@@ -7,11 +7,7 @@
 #include <string>
 using namespace std;
 
-void Progress::updateGauge(Person person, Game g) {
+void Progress::updateGauge(Person person) {
     //after each event, call updateGauge --for programmer
-}
-
-//helper function
-void Progress::displayProgressHelper() const {
-    //shows progress -- for user
+    person.updateProgress();
 }
