@@ -65,6 +65,3 @@ TEST(GameTests, testEvent3_Greta) {
     actualWeapons.push_back("knife");
     EXPECT_EQ(actualWeapons, expectedWeapons);
 }
-
-
-
