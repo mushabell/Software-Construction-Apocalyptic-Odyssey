@@ -11,16 +11,13 @@ void Display::options(const string& option1, const string& option2, const string
     cout << option1 << endl;
     cout << option2 << endl;
     cout << option3 << endl;
-    cout << endl;
 }
 void Display::options(const string& option1, const string& option2) const{
     cout << option1 << endl;
     cout << option2 << endl;
-    cout << endl;
 }
 void Display::status(const string& statement) const{
     cout << statement << endl;
-    cout << endl;
 }
 void Display::death(const string& statement) const{
     cout << statement << endl;
