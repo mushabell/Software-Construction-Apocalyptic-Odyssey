@@ -2,7 +2,12 @@
 .vscode
 Makefile
 CMakeFiles
-cmake_instal.cmake
+cmake_install.cmake
 CMakeCache.txt
 runAllTests
 a.out
+make_install.cmake
+lib/
+src/cmake_install.cmake
+tests/cmake_install.cmake
+tests/googletest/googletest/generated/
