@@ -9,4 +9,5 @@ using namespace std;
 class Progress {
     public:
         void updateGauge(Person person);
+        void info(Person person, Display dis);
 };

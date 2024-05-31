@@ -67,3 +67,10 @@ void Display::error(const string& statement) const{
 void Display::finished() const{
     cout<<"Congratulations! You made it out of the parking lot and you and your classmates made it out from the campus! You are officially saved from the zombie apocalypse! When you exited the campus, the military was able to figure out a cure for the zombie infection and was able to reverse the zombies back to humans!"<<endl;
 }
+
+void Display::outputinfo(string weakness, string strength, string name, string path){
+    cout << "Your Character's name is: " << name << endl;
+    cout << "Your Character's weakness is: " << weakness << endl;
+    cout << "Your Character's strength is: " << strength << endl;
+    cout << "Your Character's path is: " << path << endl;
+}
