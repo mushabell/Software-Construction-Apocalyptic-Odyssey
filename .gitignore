@@ -6,3 +6,15 @@ cmake_instal.cmake
 CMakeCache.txt
 runAllTests
 a.out
+lib/libgmock.a
+lib/libgtest.a
+lib/libgtest_main.a
+lib/libsimpleLibrary.a
+src/cmake_install.cmake
+tests/cmake_install.cmake
+tests/googletest/googletest/generated/GTestConfig.cmake
+tests/googletest/googletest/generated/GTestConfigVersion.cmake
+tests/googletest/googletest/generated/gmock.pc
+tests/googletest/googletest/generated/gmock_main.pc
+tests/googletest/googletest/generated/gtest.pc
+tests/googletest/googletest/generated/gtest_main.pc
