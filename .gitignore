@@ -11,7 +11,7 @@ lib/
 src/cmake_install.cmake
 tests/cmake_install.cmake
 tests/googletest/googletest/generated/
- lib/libgmock.a
+lib/libgmock.a
 lib/libgtest.a
 lib/libgtest_main.a
 lib/libsimpleLibrary.a
