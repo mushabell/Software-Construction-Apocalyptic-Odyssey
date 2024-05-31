@@ -59,6 +59,7 @@ bool Person::checkWeapon(string weaponType){
             return true;
         }
     }
+    return false;
 }
 
 //remove the weapon from the vector
