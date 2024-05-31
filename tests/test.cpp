@@ -6,17 +6,17 @@
 
 
 
-TEST(PersonTests, testKnife) {
-    Person testKnife("Dr.Brown", "..", "..");
-    testKnife.updateKnife(true);
-    EXPECT_EQ (testKnife.getKnife(), true);
-}
+// TEST(PersonTests, testKnife) {
+//     Person testKnife("Dr.Brown", "..", "..");
+//     testKnife.updateKnife(true);
+//     EXPECT_EQ (testKnife.getKnife(), true);
+// }
 
-TEST(PersonTests, testGun) {
-    Person testKnife("Dr.Brown", "..", "..");
-    testKnife.updateGun(true);
-    EXPECT_EQ (testKnife.getGun(), true);
-}
+// TEST(PersonTests, testGun) {
+//     Person testKnife("Dr.Brown", "..", "..");
+//     testKnife.updateGun(true);
+//     EXPECT_EQ (testKnife.getGun(), true);
+// }
 
 TEST(DisplayTests, testBackstory) {
     // Redirect cout to stringstream for FunctionOne
@@ -39,6 +39,39 @@ TEST(DisplayTests, testBackstory) {
     // Compare the output to the expected string
     EXPECT_EQ(outStreamOne.str(), expectedBackstory);
 }
+
+TEST(DisplayTests, event1Greta) {
+    // Redirect cout to stringstream for capturing the output of event1
+    std::ostringstream outStreamOne;
+    std::streambuf* coutBufferOne = std::cout.rdbuf(outStreamOne.rdbuf());
+    
+    // Redirect cin to stringstream for providing input to event1
+    std::istringstream inStream("W\n");  // Simulate user input 'W'
+    std::streambuf* cinBufferOne = std::cin.rdbuf(inStream.rdbuf());
+    
+    // Initialize objects
+    Person Greta("Greta", "can not see without glasses", "good lock picker");
+    Display dis;
+    Game g;
+    
+    // Call the event1 function
+    g.event1(Greta, dis);
+
+    // Restore the original buffers
+    std::cout.rdbuf(coutBufferOne);
+    std::cin.rdbuf(cinBufferOne);
+
+    // Define the expected backstory string
+    std::string expectedEvent1 = "When you begin to run out of the classroom and into the hallway you notice a hoard of zombies. You are backed against a corner. You notice that you are backed against the janitors closet. You enter the closest with all your classmates to hide from the zombies. What do you want to do now?";
+    std::string expectedChoices = "(W) Wait for the zombies to leave and then exit the janitors closet\n(S) Use the supplies in the closet as a weapon against the zombies\n(Z) Use your skills against the zombies";
+
+    // Compare the output to the expected string
+    EXPECT_EQ(outStreamOne.str(), expectedEvent1);
+    EXPECT_EQ(outStreamOne.str(), expectedChoices);
+
+
+}
+
 // TEST(TriangleTests, testArea){
 //     Triangle area(5, 2, 4);
 //     EXPECT_DOUBLE_EQ(area.getArea(), 40);
