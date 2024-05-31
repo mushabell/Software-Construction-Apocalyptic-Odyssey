@@ -11,6 +11,7 @@ class Person{
         string strength;
         string weakness;
         int gameProgressGauge;
+        string path;
     public:
         Person(string characterName, string characterWeakness, string characterStrength);
         string getName() const;
@@ -20,4 +21,5 @@ class Person{
         void addWeapon(string weaponType);
         bool checkWeapon(string weaponType);
         void removeWeapon(string weaponType);
+        void addToPath(string choice);
     };
