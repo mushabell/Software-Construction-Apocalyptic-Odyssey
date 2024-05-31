@@ -32,5 +32,8 @@ void Progress::menu(Person person, Display dis){
             cin >> userChoice;
         }
     }
-    
+}
+
+void Progress::info(Person person, Display dis){
+    dis.outputinfo(person.getWeakness(), person.getStrength(), person.getName(), person.getPath());
 }

@@ -77,3 +77,7 @@ void Person::removeWeapon(string weaponType){
 void Person::addToPath(string choice) {
     path += (choice + "\n");
 }
+
+string Person::getPath() const{
+    return path;
+}
