@@ -47,21 +47,28 @@ void Game::event1(Person person, Display dis){
     //evaluate the user input
     while (true){
         if(userChoice == 'W' || userChoice == 'w'){
+            person.addToPath(options.at(0));
             die(dis, 1);
         } else if(userChoice == 'S' || userChoice == 's'){
             person.updateProgress();
+            person.addToPath(options.at(1));
             event2(person, dis);
         } else if(userChoice == 'V' || userChoice == 'v'){
-            person.updateProgress();
+          person.updateProgress();  
+          person.addToPath(options.at(2));
             event2(person, dis);
         } else if(userChoice == 'J' || userChoice == 'j'){
+            person.addToPath(options.at(3));
             die(dis, 1); 
         } else if(userChoice == 'R' || userChoice == 'r'){
+            person.addToPath(options.at(4));
             die(dis, 1);
         } else if(userChoice == 'C' || userChoice == 'c'){
+            person.addToPath(options.at(5));
             die(dis, 1);
         } else if(userChoice == 'Z' || userChoice == 'z'){
             person.updateProgress();
+            person.addToPath(options.at(6));
             event2(person, dis);
         } else {
             dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");
@@ -113,24 +120,32 @@ void Game::event2(Person person, Display dis){
     //evaluate the user input
     while (true){
         if(userChoice == 'H' || userChoice == 'h'){
+            person.addToPath(options.at(0));
             die(dis, 2);
         } else if(userChoice == 'J' || userChoice == 'j'){
+            person.addToPath(options.at(1));
             person.updateProgress();
             event3(person, dis);
         } else if(userChoice == 'Z' || userChoice == 'z'){
+            person.addToPath(options.at(2));
             person.updateProgress();
             event3(person, dis);
         } else if(userChoice == 'D' || userChoice == 'd'){
+            person.addToPath(options.at(3));
             person.updateProgress();
             event3(person, dis);
         } else if(userChoice == 'R' || userChoice == 'r'){
+            person.addToPath(options.at(4));
             die(dis, 2);
         } else if(userChoice == 'M' || userChoice == 'm'){
+            person.addToPath(options.at(5));
             die(dis, 2);
         } else if(userChoice == 'W' || userChoice == 'w'){
+            person.addToPath(options.at(6));
             die(dis, 2);
         } else if(userChoice == 'B' || userChoice == 'b'){
             person.updateProgress();
+            person.addToPath(options.at(7));
             event3(person,dis);
         } else {
             dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");
@@ -188,22 +203,29 @@ void Game::event3(Person person, Display dis){
     //evaluate the user input
     while (true){
         if(userChoice == 'B' || userChoice == 'b'){
+            person.addToPath(options.at(0));
             die(dis, 3);
         } else if(userChoice == 'C' || userChoice == 'c'){
             person.updateProgress();
+            person.addToPath(options.at(1));
             event4(person, dis);
         } else if(userChoice == 'S' || userChoice == 's'){
             person.updateProgress();
+            person.addToPath(options.at(2));
             event4(person, dis);
         } else if(userChoice == 'K' || userChoice == 'k'){
             person.updateProgress();
+            person.addToPath(options.at(3));
             event4(person, dis); 
         } else if(userChoice == 'G' || userChoice == 'g'){
             person.updateProgress();
+            person.addToPath(options.at(4));
             event4(person, dis);
         } else if(userChoice == 'Z' || userChoice == 'z'){
+            person.addToPath(options.at(5));
             die(dis, 3);
         } else if(userChoice == 'T' || userChoice == 't'){
+            person.addToPath(options.at(6));
             die(dis, 3);
         } else {
             dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");
@@ -260,26 +282,34 @@ void Game::event4(Person person, Display dis){
             if(userchoice == 'G' || userchoice == 'g'){
                 person.removeWeapon("gun");
                 person.updateProgress();
+                person.addToPath(options.at(7));
                 event5(person, dis);
             } else if(userchoice == 'K' || userchoice == 'k'){
                 person.removeWeapon("knife");
                 person.updateProgress();
+                person.addToPath(options.at(8));
                 event5(person, dis);
             }
         } else if(userchoice == 'S' || userchoice == 's'){
+            person.addToPath(options.at(1));
             die(dis, 4); 
         } else if(userchoice == 'R' || userchoice == 'r'){
+            person.addToPath(options.at(2));
             die(dis, 4); 
         } else if(userchoice == 'M' || userchoice == 'm'){
             person.updateProgress();
+            person.addToPath(options.at(3));
             event5(person, dis);
         } else if(userchoice == 'P' || userchoice == 'p'){
             person.updateProgress();
+            person.addToPath(options.at(4));
             event5(person, dis);
         } else if(userchoice == 'H' || userchoice == 'h'){
+            person.addToPath(options.at(5));
             die(dis, 4); 
         } else if(userchoice == 'F' || userchoice == 'f'){
             person.updateProgress();
+            person.addToPath(options.at(6));
             event5(person, dis);
         } else {
             dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");
@@ -349,6 +379,7 @@ void Game::event5(Person person, Display dis){
     //evaluate the user input
     while (true){
         if(userChoice5 == 'R' || userChoice5 == 'r'){
+            person.addToPath(options.at(0));
             die(dis, 5);
         } else if(userChoice5 == 'G' || userChoice5 == 'g'){
             dis.eventPrompt("Which weapon would you like to use: ");
@@ -373,6 +404,12 @@ void Game::event5(Person person, Display dis){
                 cin.ignore();
             }
             person.updateProgress();
+            if (userChoice5 == 'g' || userChoice5 == 'G') {
+                person.addToPath("(G) Use a gun to kill the zombies");
+            }
+            else {
+                person.addToPath("(K) Use a knife to kill the zombies");
+            }
             dis.finished();
         } else if(userChoice5 == 'Z' || userChoice5 == 'z'){
             person.updateProgress();
@@ -428,26 +465,32 @@ void Game::BeginEvent(){
         if (name == "Greta" || name == "greta"){
             Person Greta("Greta", "can not see without glasses", "good lock picker");
             dis.backstory(Greta);
+            Greta.addToPath("Greta");
             event1(Greta, dis);
         } else if (name == "Jerome" || name == "jerome"){
             Person Jerome ("Jerome", "can only fight for 5 minutes", "MMA fighter");
             dis.backstory(Jerome);
+            Jerome.addToPath("Jerome");
             event1(Jerome, dis);
         } else if (name == "Cassidy" || name == "cassidy"){
             Person Cassidy ("Cassidy", "has a bad attitude", "strength");
             dis.backstory(Cassidy);
+            Cassidy.addToPath("Cassidy");
             event1(Cassidy, dis);
         } else if (name == "Dr.Brown" || name == "dr.brown" || name == "Dr.brown" || name == "dr.Brown"){
             Person DrBrown ("Dr.Brown", "can not run fast", "fire making glasses");
             dis.backstory(DrBrown);
+            DrBrown.addToPath("Dr.Brown");
             event1(DrBrown, dis);
         } else if (name == "Jessie" || name == "jessie"){
             Person Jessie ("Jessie", "very clumsy", "fast runner");
             dis.backstory(Jessie);
+            Jessie.addToPath("Jessie");
             event1(Jessie, dis);
         } else if (name == "Ryan" || name == "ryan"){
             Person Ryan ("Ryan", "arm is injured in a cast", "good manipulator");
             dis.backstory(Ryan);
+            Ryan.addToPath("Ryan");
             event1(Ryan, dis);
         } else {
             dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");

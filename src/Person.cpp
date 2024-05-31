@@ -71,3 +71,8 @@ void Person::removeWeapon(string weaponType){
         }
     }
 }
+
+//adds users choices to path
+void Person::addToPath(string choice) {
+    path += (choice + "\n");
+}
