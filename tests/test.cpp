@@ -411,7 +411,7 @@ TEST(Event3, GretaChoiceB) {
     actualWeapons.push_back("knife");
     EXPECT_EQ(actualWeapons, expectedWeapons);
 }
-// for my code
+
 TEST(Event3, RyanChoiceZ) {
     Game game;
     Person person("Ryan", "arm is injured in a cast", "good manipulator");
@@ -490,6 +490,127 @@ TEST(Event3, CassidyChoiceT) {
     actualWeapons.push_back("knife");
     EXPECT_EQ(actualWeapons, expectedWeapons);
 }
+
+TEST(Event4, GretaChoiceS) {
+    Game game;
+    Person person("Greta", "can not see without glasses", "good lock picker");
+    Display display;
+
+    // Simulate user input for option 'S'
+    std::istringstream input("S\n");
+    std::cin.rdbuf(input.rdbuf());
+
+    // Capture the output
+    std::ostringstream output;
+    std::streambuf* oldCoutBuffer = std::cout.rdbuf(output.rdbuf());
+
+    // Execute the event3 function
+    game.event4(person, display);
+
+    // Restore the original buffer for std::cout
+    std::cout.rdbuf(oldCoutBuffer);
+
+    // Verify the prompt
+    std::string expectedPrompt = "Nice choice, you made it out of the cafeteria! You only have to make it through the science lab and the parking lot to exit the campus. You walk by the science lab and notice a shortcut through the lab. You decide to take the shortcut and enter the lab. When you enter the lab you find a gun on the floor with three bullets. You pick it up for safety. As you are about to exit the lab, zombies come out from the corner of the lab! What do you want to do:\n";
+    EXPECT_TRUE(output.str().find(expectedPrompt) != std::string::npos);
+
+    // Verify the options displayed
+    std::vector<std::string> expectedOptions = {
+        "(U) Use the gun/knife to kill the zombies", 
+        "(S) Ask Cassidy to throw science equipment at the zombies",
+        "(R) Run away to the other side of the lab"
+    };
+    for (const auto& option : expectedOptions) {
+        EXPECT_TRUE(output.str().find(option) != std::string::npos);
+    }
+
+    // Verify the person has the gun weapon
+    std::vector<std::string> expectedWeapons = {"gun"};
+    std::vector<std::string> actualWeapons;
+    actualWeapons.push_back("gun");
+    EXPECT_EQ(actualWeapons, expectedWeapons);
+}
+
+TEST(Event4, GretaChoiceR) {
+    Game game;
+    Person person("Greta", "can not see without glasses", "good lock picker");
+    Display display;
+
+    // Simulate user input for option 'R'
+    std::istringstream input("R\n");
+    std::cin.rdbuf(input.rdbuf());
+
+    // Capture the output
+    std::ostringstream output;
+    std::streambuf* oldCoutBuffer = std::cout.rdbuf(output.rdbuf());
+
+    // Execute the event3 function
+    game.event4(person, display);
+
+    // Restore the original buffer for std::cout
+    std::cout.rdbuf(oldCoutBuffer);
+
+    // Verify the prompt
+    std::string expectedPrompt = "Nice choice, you made it out of the cafeteria! You only have to make it through the science lab and the parking lot to exit the campus. You walk by the science lab and notice a shortcut through the lab. You decide to take the shortcut and enter the lab. When you enter the lab you find a gun on the floor with three bullets. You pick it up for safety. As you are about to exit the lab, zombies come out from the corner of the lab! What do you want to do:\n";
+    EXPECT_TRUE(output.str().find(expectedPrompt) != std::string::npos);
+
+    // Verify the options displayed
+    std::vector<std::string> expectedOptions = {
+        "(U) Use the gun/knife to kill the zombies", 
+        "(S) Ask Cassidy to throw science equipment at the zombies",
+        "(R) Run away to the other side of the lab"
+    };
+    for (const auto& option : expectedOptions) {
+        EXPECT_TRUE(output.str().find(option) != std::string::npos);
+    }
+
+    // Verify the person has the gun weapon
+    std::vector<std::string> expectedWeapons = {"gun"};
+    std::vector<std::string> actualWeapons;
+    actualWeapons.push_back("gun");
+    EXPECT_EQ(actualWeapons, expectedWeapons);
+}
+
+TEST(Event4, CassidyChoiceH) {
+    Game game;
+    Person person("Cassidy", "has a bad attitude", "strength");
+    Display display;
+
+    // Simulate user input for option 'H'
+    std::istringstream input("H\n");
+    std::cin.rdbuf(input.rdbuf());
+
+    // Capture the output
+    std::ostringstream output;
+    std::streambuf* oldCoutBuffer = std::cout.rdbuf(output.rdbuf());
+
+    // Execute the event3 function
+    game.event4(person, display);
+
+    // Restore the original buffer for std::cout
+    std::cout.rdbuf(oldCoutBuffer);
+
+    // Verify the prompt
+    std::string expectedPrompt = "Nice choice, you made it out of the cafeteria! You only have to make it through the science lab and the parking lot to exit the campus. You walk by the science lab and notice a shortcut through the lab. You decide to take the shortcut and enter the lab. When you enter the lab you find a gun on the floor with three bullets. You pick it up for safety. As you are about to exit the lab, zombies come out from the corner of the lab! What do you want to do:\n";
+    EXPECT_TRUE(output.str().find(expectedPrompt) != std::string::npos);
+
+    // Verify the options displayed
+    std::vector<std::string> expectedOptions = {
+        "(U) Use the gun/knife to kill the zombies", 
+        "(P) Create a poison in the lab to kill the zombies with",
+        "(H) Act like a statue and hope the zombies will not see you"
+    };
+    for (const auto& option : expectedOptions) {
+        EXPECT_TRUE(output.str().find(option) != std::string::npos);
+    }
+
+    // Verify the person has the gun weapon
+    std::vector<std::string> expectedWeapons = {"gun"};
+    std::vector<std::string> actualWeapons;
+    actualWeapons.push_back("gun");
+    EXPECT_EQ(actualWeapons, expectedWeapons);
+}
+
 //------------------------------------------------(Die)-----------------------------------------------------------
 TEST(DieFunction, Event1) {
     Display display;
