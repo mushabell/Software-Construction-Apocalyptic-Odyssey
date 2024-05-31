@@ -14,7 +14,8 @@ class Person{
     public:
         Person(string characterName, string characterWeakness, string characterStrength);
         string getName() const;
-        void updateProgress(int level);
+        void updateProgress();
+        int getGameProgress() const;
         string getStrength() const;
         string getWeakness() const;
         void addWeapon(string weaponType);
