@@ -489,8 +489,8 @@ TEST(Event3, CassidyChoiceT) {
     actualWeapons.push_back("knife");
     EXPECT_EQ(actualWeapons, expectedWeapons);
 }
-
-TEST(GameTest, DieEvent1) {
+//------------------------------------------------(Die)-----------------------------------------------------------
+TEST(DieFunction, Event1) {
     Display display;
     Game game;
 
@@ -503,8 +503,7 @@ TEST(GameTest, DieEvent1) {
 
     EXPECT_EQ(oss.str(), "You were unsuccessful. Your decision led the zombies into the janitor's closet and they eventually caught up to you. You and your classmates turned into zombies and the zombie apocalypse has taken over the world. You lose!\n\nEnd of game. Would you like to play again or quit?\n(Q) quit\n(R) restart\n");
 }
-
-TEST(GameTest, DieEvent2) {
+TEST(DieFunction, Event2) {
     Display display;
     Game game;
 
@@ -517,8 +516,7 @@ TEST(GameTest, DieEvent2) {
 
     EXPECT_EQ(oss.str(), "You were unsuccessful. Your decision led the zombies into the building and they eventually caught up to you. You and your classmates turned into zombies and the zombie apocalypse has taken over the world. You lose!\n\nEnd of game. Would you like to play again or quit?\n(Q) quit\n(R) restart\n");
 }
-
-TEST(GameTest, DieEvent3) {
+TEST(DieFunction, Event3) {
     Display display;
     Game game;
 
@@ -531,8 +529,7 @@ TEST(GameTest, DieEvent3) {
 
     EXPECT_EQ(oss.str(), "You were unsuccessful. Your decision led the zombies into the cafeteria and they eventually caught up to you. You and your classmates turned into zombies and the zombie apocalypse has taken over the world. You lose!\n\nEnd of game. Would you like to play again or quit?\n(Q) quit\n(R) restart\n");
 }
-
-TEST(GameTest, DieEvent4) {
+TEST(DieFunction, Event4) {
     Display display;
     Game game;
 
@@ -545,8 +542,7 @@ TEST(GameTest, DieEvent4) {
 
     EXPECT_EQ(oss.str(), "You were unsuccessful. Your decision led the zombies into the cafeteria and they eventually caught up to you. You and your classmates turned into zombies and the zombie apocalypse has taken over the world. You lose!\n\nEnd of game. Would you like to play again or quit?\n(Q) quit\n(R) restart\n");
 }
-
-TEST(GameTest, DieEvent5) {
+TEST(DieFunction, Event5) {
     Display display;
     Game game;
 
