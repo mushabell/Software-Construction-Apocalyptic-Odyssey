@@ -3,7 +3,7 @@
 #include "../header/Game.h"
 #include "../header/Person.h"
 #include "../header/Progress.h"
-
+//------------------------------------------------(Backstory)-----------------------------------------------------------
 TEST(Backstory, testGreta) {
     // Redirect cout to stringstream for FunctionOne
     std::ostringstream outStreamOne;
@@ -25,7 +25,6 @@ TEST(Backstory, testGreta) {
     // Compare the output to the expected string
     EXPECT_EQ(outStreamOne.str(), expectedBackstory);
 }
-
 TEST(Backstory, testJerome) {
     // Redirect cout to stringstream for FunctionOne
     std::ostringstream outStreamOne;
@@ -42,7 +41,6 @@ TEST(Backstory, testJerome) {
     // Compare the output to the expected string
     EXPECT_EQ(outStreamOne.str(), expectedBackstory);
 }
-
 TEST(Backstory, testCassidy) {
     // Redirect cout to stringstream for FunctionOne
     std::ostringstream outStreamOne;
@@ -59,7 +57,6 @@ TEST(Backstory, testCassidy) {
     // Compare the output to the expected string
     EXPECT_EQ(outStreamOne.str(), expectedBackstory);
 }
-
 TEST(Backstory, testDrBrown) {
     // Redirect cout to stringstream for FunctionOne
     std::ostringstream outStreamOne;
@@ -76,7 +73,6 @@ TEST(Backstory, testDrBrown) {
     // Compare the output to the expected string
     EXPECT_EQ(outStreamOne.str(), expectedBackstory);
 }
-
 TEST(Backstory, testJessie) {
     // Redirect cout to stringstream for FunctionOne
     std::ostringstream outStreamOne;
@@ -92,7 +88,6 @@ TEST(Backstory, testJessie) {
     // Compare the output to the expected string
     EXPECT_EQ(outStreamOne.str(), expectedBackstory);
 }
-
 TEST(Backstory, testRyan) {
     // Redirect cout to stringstream for FunctionOne
     std::ostringstream outStreamOne;
@@ -416,7 +411,6 @@ TEST(Event3, GretaChoiceB) {
     actualWeapons.push_back("knife");
     EXPECT_EQ(actualWeapons, expectedWeapons);
 }
-
 TEST(Event3, RyanChoiceZ) {
     Game game;
     Person person("Ryan", "arm is injured in a cast", "good manipulator");
@@ -456,7 +450,6 @@ TEST(Event3, RyanChoiceZ) {
     actualWeapons.push_back("knife");
     EXPECT_EQ(actualWeapons, expectedWeapons);
 }
-
 TEST(Event3, CassidyChoiceT) {
     Game game;
     Person person("Cassidy", "has a bad attitude", "strength");
