@@ -1,4 +1,4 @@
-# Install script for directory: /home/csmajs/abell062/final-project-nvank001_jsama031_rkahn007_abell062/src
+# Install script for directory: /class/classes/rkahn007/final-project-nvank001_jsama031_rkahn007_abell062/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
