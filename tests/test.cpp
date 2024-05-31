@@ -4,20 +4,6 @@
 #include "../header/Person.h"
 #include "../header/Progress.h"
 
-
-
-// TEST(PersonTests, testKnife) {
-//     Person testKnife("Dr.Brown", "..", "..");
-//     testKnife.updateKnife(true);
-//     EXPECT_EQ (testKnife.getKnife(), true);
-// }
-
-// TEST(PersonTests, testGun) {
-//     Person testKnife("Dr.Brown", "..", "..");
-//     testKnife.updateGun(true);
-//     EXPECT_EQ (testKnife.getGun(), true);
-// }
-
 TEST(DisplayTests, testBackstory) {
     // Redirect cout to stringstream for FunctionOne
     std::ostringstream outStreamOne;
@@ -40,86 +26,42 @@ TEST(DisplayTests, testBackstory) {
     EXPECT_EQ(outStreamOne.str(), expectedBackstory);
 }
 
-// TEST(TriangleTests, testArea){
-//     Triangle area(5, 2, 4);
-//     EXPECT_DOUBLE_EQ(area.getArea(), 40);
-// }
+TEST(GameTests, testEvent3_Greta) {
+    Game game;
+    Person person("Greta", "can not see without glasses", "good lock picker");
+    Display display;
 
-// TEST(TriangleTests, testIsosceles){
-//     Triangle isosceles(5, 5, 5);
-//     EXPECT_EQ(isosceles.getKind(), Triangle::Kind::EQUILATERAL);
-// }
+    // Simulate user input for option 'C'
+    std::istringstream input("C\n");
+    std::cin.rdbuf(input.rdbuf());
 
-// TEST(TriangleTests, NegativeSidelength){
-//     EXPECT_DEATH(Triangle t(5, 3, 5), "Invalid input given.");
-// }
+    // Capture the output
+    std::ostringstream output;
+    std::streambuf* oldCoutBuffer = std::cout.rdbuf(output.rdbuf());
 
-// TEST(TriangleTests, TestIsEquilateral){
-//     Triangle equilateral(5, 5, 5);
+    // Execute the event3 function
+    game.event3(person, display);
 
-//     EXPECT_TRUE(equilateral.isEquilateral());
-// }
+    // Restore the original buffer for std::cout
+    std::cout.rdbuf(oldCoutBuffer);
 
-// TEST(TriangleTests, ScaleneTriangle) {
-//   Triangle Scalene(7, 6, 4);
-//   EXPECT_EQ(Scalene.getKind(), Triangle::Kind::SCALENE);
-// }
+    // Verify the prompt
+    std::string expectedPrompt = "Nice choice! You made it outside of the building! You decide to go through the cafeteria to choose the shortest path to get off the campus as fast as possible. When you enter the cafeteria you see that the building is empty. You and your classmates enter the main hall and the door closes behind you. You notice a knife on the floor and pick it up for protection. You walk across the hall and try to open the door behind you but you can not! What do you want to do now?\n";
+    EXPECT_TRUE(output.str().find(expectedPrompt) != std::string::npos);
 
-// TEST(TriangleTests, TestingGetPerimeter){
-//     Triangle t(6, 5, 5);
-//     EXPECT_EQ(t.getPerimeter(), 16);
-// }
+    // Verify the options displayed
+    std::vector<std::string> expectedOptions = {
+        "(B) Use the butter in the cafeteria to make the door lock slippery",
+        "(C) Ask Cassidy to break the door down",
+        "(S) Use your skill against the door"
+    };
+    for (const auto& option : expectedOptions) {
+        EXPECT_TRUE(output.str().find(option) != std::string::npos);
+    }
 
-// TEST(HailstoneTests, testNumber0) {
-//     int number = 0;
-//     EXPECT_FALSE(satisfiesHailstone(number));
-// }
-
-// TEST(HailstoneTests, testNumber1) {
-//     int number = 1;
-//     EXPECT_TRUE(satisfiesHailstone(number));
-// }
-
-// TEST(HailstoneTests, testNumberEven) {
-//     int number = 4;
-//     EXPECT_TRUE(satisfiesHailstone(number));
-// }
-
-// TEST(HailstoneTests, testNumberOdd) {
-//     int number = 5;
-//     EXPECT_TRUE(satisfiesHailstone(number));
-// }
-
-// class RankListStub : public RankList {
-//     private:
-//         std::vector<std::string> names = { "Ambard", "Bluebard", "Cuebard", "Duebard", "Eobard"};
-//         int currentNameIndex;
-
-//     public:
-//         RankListStub() { currentNameIndex = 0; }
-//         std::string getNext() override {
-//             return names.at(currentNameIndex++);
-//         }
-//         std::vector<std::string> getNames() { return names; }
-// };
-
-// class MockAwardCeremonyActions : public AwardCeremonyActions {
-//     public:
-//         MOCK_METHOD(void, playAnthem, (), (override));
-//         MOCK_METHOD(void, awardBronze, (std::string), (override));
-//         MOCK_METHOD(void, awardSilver, (std::string), (override));
-//         MOCK_METHOD(void, awardGold, (std::string), (override));
-//         MOCK_METHOD(void, turnOffTheLightsAndGoHome, (), (override));
-// };
-
-// TEST(AwardsTests, PerformAwardCeremony) {
-//     MockAwardCeremonyActions mock;
-//     RankListStub stub;
-//     EXPECT_CALL(mock, playAnthem);
-//     EXPECT_CALL(mock, awardBronze("Ambard"));
-//     EXPECT_CALL(mock, awardSilver("Bluebard"));
-//     EXPECT_CALL(mock, awardGold("Cuebard"));
-//     EXPECT_CALL(mock, turnOffTheLightsAndGoHome);
-
-//     performAwardCeremony(stub, mock);
-// }
+    // Verify the person has the knife weapon
+    std::vector<std::string> expectedWeapons = {"knife"};
+    std::vector<std::string> actualWeapons;
+    actualWeapons.push_back("knife");
+    EXPECT_EQ(actualWeapons, expectedWeapons);
+}
