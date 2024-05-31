@@ -5,6 +5,7 @@
 using namespace std;
     
 void Display::eventPrompt(const string& statement) const{
+    cout << endl;
     cout << statement << endl;
 }
 void Display::options(const string& option1, const string& option2, const string& option3) const{
