@@ -3,7 +3,7 @@
 #include "../header/Game.h"
 #include "../header/Person.h"
 #include "../header/Progress.h"
-
+//------------------------------------------------(Backstory)-----------------------------------------------------------
 TEST(Backstory, testGreta) {
     // Redirect cout to stringstream for FunctionOne
     std::ostringstream outStreamOne;
@@ -25,7 +25,6 @@ TEST(Backstory, testGreta) {
     // Compare the output to the expected string
     EXPECT_EQ(outStreamOne.str(), expectedBackstory);
 }
-
 TEST(Backstory, testJerome) {
     // Redirect cout to stringstream for FunctionOne
     std::ostringstream outStreamOne;
@@ -42,7 +41,6 @@ TEST(Backstory, testJerome) {
     // Compare the output to the expected string
     EXPECT_EQ(outStreamOne.str(), expectedBackstory);
 }
-
 TEST(Backstory, testCassidy) {
     // Redirect cout to stringstream for FunctionOne
     std::ostringstream outStreamOne;
@@ -59,7 +57,6 @@ TEST(Backstory, testCassidy) {
     // Compare the output to the expected string
     EXPECT_EQ(outStreamOne.str(), expectedBackstory);
 }
-
 TEST(Backstory, testDrBrown) {
     // Redirect cout to stringstream for FunctionOne
     std::ostringstream outStreamOne;
@@ -76,7 +73,6 @@ TEST(Backstory, testDrBrown) {
     // Compare the output to the expected string
     EXPECT_EQ(outStreamOne.str(), expectedBackstory);
 }
-
 TEST(Backstory, testJessie) {
     // Redirect cout to stringstream for FunctionOne
     std::ostringstream outStreamOne;
@@ -92,7 +88,6 @@ TEST(Backstory, testJessie) {
     // Compare the output to the expected string
     EXPECT_EQ(outStreamOne.str(), expectedBackstory);
 }
-
 TEST(Backstory, testRyan) {
     // Redirect cout to stringstream for FunctionOne
     std::ostringstream outStreamOne;
@@ -110,7 +105,273 @@ TEST(Backstory, testRyan) {
     // Compare the output to the expected string
     EXPECT_EQ(outStreamOne.str(), expectedBackstory);
 }
+//------------------------------------------------(Event 1)-----------------------------------------------------------
+TEST(Event1, GretaChoiceW) {
+    Game game;
+    Person person("Greta", "can not see without glasses", "good lock picker");
+    Display display;
 
+    // Simulate user input for option 'W'
+    std::istringstream input("W\n");
+    std::cin.rdbuf(input.rdbuf());
+
+    // Capture the output
+    std::ostringstream output;
+    std::streambuf* oldCoutBuffer = std::cout.rdbuf(output.rdbuf());
+
+    // Execute the event3 function
+    game.event1(person, display);
+
+    // Restore the original buffer for std::cout
+    std::cout.rdbuf(oldCoutBuffer);
+
+    // Verify the prompt
+    std::string expectedPrompt = "When you begin to run out of the classroom and into the hallway you notice a hoard of zombies. You are backed against a corner. You notice that you are backed against the janitors closet. You enter the closest with all your classmates to hide from the zombies. What do you want to do now?\n";
+    EXPECT_TRUE(output.str().find(expectedPrompt) != std::string::npos);
+
+    // Verify the options displayed
+    std::vector<std::string> expectedOptions = {
+        "(W) Wait for the zombies to leave and then exit the janitors closet",
+        "(S) Use the supplies in the closet as a weapon against the zombies",
+        "(Z) Use your skills against the zombies"
+    };
+    for (const auto& option : expectedOptions) {
+        EXPECT_TRUE(output.str().find(option) != std::string::npos);
+    }
+}
+TEST(Event1, CassidyChoiceJ) {
+    Game game;
+    Person person("Cassidy", "has a bad attitude", "strength");
+    Display display;
+
+    // Simulate user input for option 'J'
+    std::istringstream input("J\n");
+    std::cin.rdbuf(input.rdbuf());
+
+    // Capture the output
+    std::ostringstream output;
+    std::streambuf* oldCoutBuffer = std::cout.rdbuf(output.rdbuf());
+
+    // Execute the event3 function
+    game.event1(person, display);
+
+    // Restore the original buffer for std::cout
+    std::cout.rdbuf(oldCoutBuffer);
+
+    // Verify the prompt
+    std::string expectedPrompt = "When you begin to run out of the classroom and into the hallway you notice a hoard of zombies. You are backed against a corner. You notice that you are backed against the janitors closet. You enter the closest with all your classmates to hide from the zombies. What do you want to do now?\n";
+    EXPECT_TRUE(output.str().find(expectedPrompt) != std::string::npos);
+
+    // Verify the options displayed
+    std::vector<std::string> expectedOptions = {
+        "(Z) Use your skills against the zombies",
+        "(W) Wait for the zombies to leave and then exit the janitors closet",
+        "(J) Ask Jerome to go out and knock out all the zombies"
+    };
+    for (const auto& option : expectedOptions) {
+        EXPECT_TRUE(output.str().find(option) != std::string::npos);
+    }
+}
+TEST(Event1, JessieChoiceR) {
+    Game game;
+    Person person("Jessie", "very clumsy", "fast runner");
+    Display display;
+
+    // Simulate user input for option 'R'
+    std::istringstream input("R\n");
+    std::cin.rdbuf(input.rdbuf());
+
+    // Capture the output
+    std::ostringstream output;
+    std::streambuf* oldCoutBuffer = std::cout.rdbuf(output.rdbuf());
+
+    // Execute the event3 function
+    game.event1(person, display);
+
+    // Restore the original buffer for std::cout
+    std::cout.rdbuf(oldCoutBuffer);
+
+    // Verify the prompt
+    std::string expectedPrompt = "When you begin to run out of the classroom and into the hallway you notice a hoard of zombies. You are backed against a corner. You notice that you are backed against the janitors closet. You enter the closest with all your classmates to hide from the zombies. What do you want to do now?\n";
+    EXPECT_TRUE(output.str().find(expectedPrompt) != std::string::npos);
+
+    // Verify the options displayed
+    std::vector<std::string> expectedOptions = {
+        "(Z) Use your skills against the zombies",
+        "(R) Ask Ryan to go talk to the zombies and manipulate them into letting you all go",
+        "(W) Wait for the zombies to leave and then exit the janitors closet"
+    };
+    for (const auto& option : expectedOptions) {
+        EXPECT_TRUE(output.str().find(option) != std::string::npos);
+    }
+}
+TEST(Event1, DrBrownChoiceC) {
+    Game game;
+    Person person("Dr.Brown", "can not run fast", "fire making glasses");
+    Display display;
+
+    // Simulate user input for option 'C'
+    std::istringstream input("C\n");
+    std::cin.rdbuf(input.rdbuf());
+
+    // Capture the output
+    std::ostringstream output;
+    std::streambuf* oldCoutBuffer = std::cout.rdbuf(output.rdbuf());
+
+    // Execute the event3 function
+    game.event1(person, display);
+
+    // Restore the original buffer for std::cout
+    std::cout.rdbuf(oldCoutBuffer);
+
+    // Verify the prompt
+    std::string expectedPrompt = "When you begin to run out of the classroom and into the hallway you notice a hoard of zombies. You are backed against a corner. You notice that you are backed against the janitors closet. You enter the closest with all your classmates to hide from the zombies. What do you want to do now?\n";
+    EXPECT_TRUE(output.str().find(expectedPrompt) != std::string::npos);
+
+    // Verify the options displayed
+    std::vector<std::string> expectedOptions = {
+        "(W) Wait for the zombies to leave and then exit the janitors closet",
+        "(Z) Use your skills against the zombies",
+        "(C) Ask Cassidy to lift throw heavy buckets from the closest onto the zombies"
+    };
+    for (const auto& option : expectedOptions) {
+        EXPECT_TRUE(output.str().find(option) != std::string::npos);
+    }
+}
+//------------------------------------------------(Event 2)-----------------------------------------------------------
+TEST(Event2, GretaChoiceH) {
+    Game game;
+    Person person("Greta", "can not see without glasses", "good lock picker");
+    Display display;
+
+    // Simulate user input for option 'H'
+    std::istringstream input("H\n");
+    std::cin.rdbuf(input.rdbuf());
+
+    // Capture the output
+    std::ostringstream output;
+    std::streambuf* oldCoutBuffer = std::cout.rdbuf(output.rdbuf());
+
+    // Execute the event3 function
+    game.event2(person, display);
+
+    // Restore the original buffer for std::cout
+    std::cout.rdbuf(oldCoutBuffer);
+
+    // Verify the prompt
+    std::string expectedPrompt = "Nice choice, you made it out of the janitor’s closet! You continue to walk towards the exit of the building. Right before you open the door you notice a bunch of zombies walking around the campus. What do you want to do: \n";
+    EXPECT_TRUE(output.str().find(expectedPrompt) != std::string::npos);
+
+    // Verify the options displayed
+    std::vector<std::string> expectedOptions = {
+        "(H) Hide in the building until there is only a little bit of zombies outside",
+        "(J) Ask Jerome to go outside and use his MMA skills to fight the zombies",
+        "(Z) Use your skills against the zombies"
+    };
+    for (const auto& option : expectedOptions) {
+        EXPECT_TRUE(output.str().find(option) != std::string::npos);
+    }
+}
+TEST(Event2, DrBrownChoiceR) {
+    Game game;
+    Person person("Dr.Brown", "can not run fast", "fire making glasses");
+    Display display;
+
+    // Simulate user input for option 'R'
+    std::istringstream input("R\n");
+    std::cin.rdbuf(input.rdbuf());
+
+    // Capture the output
+    std::ostringstream output;
+    std::streambuf* oldCoutBuffer = std::cout.rdbuf(output.rdbuf());
+
+    // Execute the event3 function
+    game.event2(person, display);
+
+    // Restore the original buffer for std::cout
+    std::cout.rdbuf(oldCoutBuffer);
+
+    // Verify the prompt
+    std::string expectedPrompt = "Nice choice, you made it out of the janitor’s closet! You continue to walk towards the exit of the building. Right before you open the door you notice a bunch of zombies walking around the campus. What do you want to do: \n";
+    EXPECT_TRUE(output.str().find(expectedPrompt) != std::string::npos);
+
+    // Verify the options displayed
+    std::vector<std::string> expectedOptions = {
+        "(W) Wait for the zombies to leave and then exit the building",
+        "(Z) Use your skills against the zombies",
+        "(R) Ask Ryan to manipulate the zombies into letting all of you go"
+    };
+    for (const auto& option : expectedOptions) {
+        EXPECT_TRUE(output.str().find(option) != std::string::npos);
+    }
+}
+TEST(Event2, CassidyChoiceM) {
+    Game game;
+    Person person("Cassidy", "has a bad attitude", "strength");
+    Display display;
+
+    // Simulate user input for option 'M'
+    std::istringstream input("M\n");
+    std::cin.rdbuf(input.rdbuf());
+
+    // Capture the output
+    std::ostringstream output;
+    std::streambuf* oldCoutBuffer = std::cout.rdbuf(output.rdbuf());
+
+    // Execute the event3 function
+    game.event2(person, display);
+
+    // Restore the original buffer for std::cout
+    std::cout.rdbuf(oldCoutBuffer);
+
+    // Verify the prompt
+    std::string expectedPrompt = "Nice choice, you made it out of the janitor’s closet! You continue to walk towards the exit of the building. Right before you open the door you notice a bunch of zombies walking around the campus. What do you want to do: \n";
+    EXPECT_TRUE(output.str().find(expectedPrompt) != std::string::npos);
+
+    // Verify the options displayed
+    std::vector<std::string> expectedOptions = {
+        "(Z) Use your skills against the zombies",
+        "(M) Carry a mirror with you so every time a zombie comes near you, they only see their own reflection",
+        "(D) Dig a tunnel underground to get out of the building without getting attacked by zombies"
+    };
+    for (const auto& option : expectedOptions) {
+        EXPECT_TRUE(output.str().find(option) != std::string::npos);
+    }
+}
+TEST(Event2, DrBrownChoiceW) {
+    Game game;
+    Person person("Dr.Brown", "can not run fast", "fire making glasses");
+    Display display;
+
+    // Simulate user input for option 'W'
+    std::istringstream input("W\n");
+    std::cin.rdbuf(input.rdbuf());
+
+    // Capture the output
+    std::ostringstream output;
+    std::streambuf* oldCoutBuffer = std::cout.rdbuf(output.rdbuf());
+
+    // Execute the event3 function
+    game.event2(person, display);
+
+    // Restore the original buffer for std::cout
+    std::cout.rdbuf(oldCoutBuffer);
+
+    // Verify the prompt
+    std::string expectedPrompt = "Nice choice, you made it out of the janitor’s closet! You continue to walk towards the exit of the building. Right before you open the door you notice a bunch of zombies walking around the campus. What do you want to do: \n";
+    EXPECT_TRUE(output.str().find(expectedPrompt) != std::string::npos);
+
+    // Verify the options displayed
+    std::vector<std::string> expectedOptions = {
+        "(W) Wait for the zombies to leave and then exit the building",
+        "(Z) Use your skills against the zombies",
+        "(R) Ask Ryan to manipulate the zombies into letting all of you go"
+    };
+    for (const auto& option : expectedOptions) {
+        EXPECT_TRUE(output.str().find(option) != std::string::npos);
+    }
+}
+//------------------------------------------------(Event 3)-----------------------------------------------------------
 TEST(Event3, GretaChoiceB) {
     Game game;
     Person person("Greta", "can not see without glasses", "good lock picker");
@@ -151,3 +412,147 @@ TEST(Event3, GretaChoiceB) {
     EXPECT_EQ(actualWeapons, expectedWeapons);
 }
 // for my code
+TEST(Event3, RyanChoiceZ) {
+    Game game;
+    Person person("Ryan", "arm is injured in a cast", "good manipulator");
+    Display display;
+
+    // Simulate user input for option 'C'
+    std::istringstream input("Z\n");
+    std::cin.rdbuf(input.rdbuf());
+
+    // Capture the output
+    std::ostringstream output;
+    std::streambuf* oldCoutBuffer = std::cout.rdbuf(output.rdbuf());
+
+    // Execute the event3 function
+    game.event3(person, display);
+
+    // Restore the original buffer for std::cout
+    std::cout.rdbuf(oldCoutBuffer);
+
+    // Verify the prompt
+    std::string expectedPrompt = "Nice choice! You made it outside of the building! You decide to go through the cafeteria to choose the shortest path to get off the campus as fast as possible. When you enter the cafeteria you see that the building is empty. You and your classmates enter the main hall and the door closes behind you. You notice a knife on the floor and pick it up for protection. You walk across the hall and try to open the door behind you but you can not! What do you want to do now?\n";
+    EXPECT_TRUE(output.str().find(expectedPrompt) != std::string::npos);
+
+    // Verify the options displayed
+    std::vector<std::string> expectedOptions = {
+        "(Z) Wait for the zombies to come break the door",
+        "(G) Ask Greta to open the door",
+        "(S) Use your skill against the door"
+    };
+    for (const auto& option : expectedOptions) {
+        EXPECT_TRUE(output.str().find(option) != std::string::npos);
+    }
+
+    // Verify the person has the knife weapon
+    std::vector<std::string> expectedWeapons = {"knife"};
+    std::vector<std::string> actualWeapons;
+    actualWeapons.push_back("knife");
+    EXPECT_EQ(actualWeapons, expectedWeapons);
+}
+TEST(Event3, CassidyChoiceT) {
+    Game game;
+    Person person("Cassidy", "has a bad attitude", "strength");
+    Display display;
+
+    // Simulate user input for option 'C'
+    std::istringstream input("T\n");
+    std::cin.rdbuf(input.rdbuf());
+
+    // Capture the output
+    std::ostringstream output;
+    std::streambuf* oldCoutBuffer = std::cout.rdbuf(output.rdbuf());
+
+    // Execute the event3 function
+    game.event3(person, display);
+
+    // Restore the original buffer for std::cout
+    std::cout.rdbuf(oldCoutBuffer);
+
+    // Verify the prompt
+    std::string expectedPrompt = "Nice choice! You made it outside of the building! You decide to go through the cafeteria to choose the shortest path to get off the campus as fast as possible. When you enter the cafeteria you see that the building is empty. You and your classmates enter the main hall and the door closes behind you. You notice a knife on the floor and pick it up for protection. You walk across the hall and try to open the door behind you but you can not! What do you want to do now?\n";
+    EXPECT_TRUE(output.str().find(expectedPrompt) != std::string::npos);
+
+    // Verify the options displayed
+    std::vector<std::string> expectedOptions = {
+        "(S) Use your skill against the door",
+        "(T) Dig a tunnel underground to get out of the cafeteria",
+        "(G) Ask Greta to open the door"
+    };
+    for (const auto& option : expectedOptions) {
+        EXPECT_TRUE(output.str().find(option) != std::string::npos);
+    }
+
+    // Verify the person has the knife weapon
+    std::vector<std::string> expectedWeapons = {"knife"};
+    std::vector<std::string> actualWeapons;
+    actualWeapons.push_back("knife");
+    EXPECT_EQ(actualWeapons, expectedWeapons);
+}
+//------------------------------------------------(Die)-----------------------------------------------------------
+TEST(DieFunction, Event1) {
+    Display display;
+    Game game;
+
+    std::ostringstream oss;
+    std::streambuf* oldCoutBuffer = std::cout.rdbuf(oss.rdbuf());
+
+    game.die(display, 1);
+
+    std::cout.rdbuf(oldCoutBuffer);
+
+    EXPECT_EQ(oss.str(), "You were unsuccessful. Your decision led the zombies into the janitor's closet and they eventually caught up to you. You and your classmates turned into zombies and the zombie apocalypse has taken over the world. You lose!\n\nEnd of game. Would you like to play again or quit?\n(Q) quit\n(R) restart\n");
+}
+TEST(DieFunction, Event2) {
+    Display display;
+    Game game;
+
+    std::ostringstream oss;
+    std::streambuf* oldCoutBuffer = std::cout.rdbuf(oss.rdbuf());
+
+    game.die(display, 2);
+
+    std::cout.rdbuf(oldCoutBuffer);
+
+    EXPECT_EQ(oss.str(), "You were unsuccessful. Your decision led the zombies into the building and they eventually caught up to you. You and your classmates turned into zombies and the zombie apocalypse has taken over the world. You lose!\n\nEnd of game. Would you like to play again or quit?\n(Q) quit\n(R) restart\n");
+}
+TEST(DieFunction, Event3) {
+    Display display;
+    Game game;
+
+    std::ostringstream oss;
+    std::streambuf* oldCoutBuffer = std::cout.rdbuf(oss.rdbuf());
+
+    game.die(display, 3);
+
+    std::cout.rdbuf(oldCoutBuffer);
+
+    EXPECT_EQ(oss.str(), "You were unsuccessful. Your decision led the zombies into the cafeteria and they eventually caught up to you. You and your classmates turned into zombies and the zombie apocalypse has taken over the world. You lose!\n\nEnd of game. Would you like to play again or quit?\n(Q) quit\n(R) restart\n");
+}
+TEST(DieFunction, Event4) {
+    Display display;
+    Game game;
+
+    std::ostringstream oss;
+    std::streambuf* oldCoutBuffer = std::cout.rdbuf(oss.rdbuf());
+
+    game.die(display, 4);
+
+    std::cout.rdbuf(oldCoutBuffer);
+
+    EXPECT_EQ(oss.str(), "You were unsuccessful. Your decision led the zombies into the cafeteria and they eventually caught up to you. You and your classmates turned into zombies and the zombie apocalypse has taken over the world. You lose!\n\nEnd of game. Would you like to play again or quit?\n(Q) quit\n(R) restart\n");
+}
+TEST(DieFunction, Event5) {
+    Display display;
+    Game game;
+
+    std::ostringstream oss;
+    std::streambuf* oldCoutBuffer = std::cout.rdbuf(oss.rdbuf());
+
+    game.die(display, 5);
+
+    std::cout.rdbuf(oldCoutBuffer);
+
+    EXPECT_EQ(oss.str(), "You were unsuccessful. Your decision led the zombies to attack you from the parking lot. You and your classmates turned into zombies and the zombie apocalypse has taken over the world. You lose!\n\nEnd of game. Would you like to play again or quit?\n(Q) quit\n(R) restart\n");
+}
