@@ -23,4 +23,5 @@ class Person{
         bool checkWeapon(string weaponType);
         void removeWeapon(string weaponType);
         void addToPath(string choice);
+        string getPath()const;
     };

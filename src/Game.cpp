@@ -301,6 +301,7 @@ void Game::event4(Person person, Display dis){
     while (true){
         if(userchoice == 'U' || userchoice == 'u'){
             dis.options(options.at(7), options.at(8));
+            cin >> userchoice;
             if(userchoice == 'G' || userchoice == 'g'){
                 person.removeWeapon("gun");
                 person.updateProgress();
@@ -503,31 +504,37 @@ void Game::BeginEvent(){
             dis.backstory(Greta);
             Greta.addToPath("Greta");
             event1(Greta, dis);
+            return;
         } else if (name == "Jerome" || name == "jerome"){
             Person Jerome ("Jerome", "can only fight for 5 minutes", "MMA fighter");
             dis.backstory(Jerome);
             Jerome.addToPath("Jerome");
             event1(Jerome, dis);
+            return;
         } else if (name == "Cassidy" || name == "cassidy"){
             Person Cassidy ("Cassidy", "has a bad attitude", "strength");
             dis.backstory(Cassidy);
             Cassidy.addToPath("Cassidy");
             event1(Cassidy, dis);
+            return;
         } else if (name == "Dr.Brown" || name == "dr.brown" || name == "Dr.brown" || name == "dr.Brown"){
             Person DrBrown ("Dr.Brown", "can not run fast", "fire making glasses");
             dis.backstory(DrBrown);
             DrBrown.addToPath("Dr.Brown");
             event1(DrBrown, dis);
+            return;
         } else if (name == "Jessie" || name == "jessie"){
             Person Jessie ("Jessie", "very clumsy", "fast runner");
             dis.backstory(Jessie);
             Jessie.addToPath("Jessie");
             event1(Jessie, dis);
+            return;
         } else if (name == "Ryan" || name == "ryan"){
             Person Ryan ("Ryan", "arm is injured in a cast", "good manipulator");
             dis.backstory(Ryan);
             Ryan.addToPath("Ryan");
             event1(Ryan, dis);
+            return;
         } else {
             dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");
             cin.ignore();
