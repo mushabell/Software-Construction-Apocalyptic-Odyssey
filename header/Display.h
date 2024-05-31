@@ -18,4 +18,5 @@ class Display {
         void backstory(const Person &person) const;
         void error(const string& statement) const;
         void finished() const;
+        void outputinfo(string weakness, string strength, string name, string path);
 };
