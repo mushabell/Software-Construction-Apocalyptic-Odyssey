@@ -8,8 +8,9 @@
 
 using namespace std;
 
-class Game{
-    private:
+class Game{   
+    public:
+        void BeginEvent();
         //functions for each event
         void event1(Person person, Display dis);
         void event2(Person person, Display dis);
@@ -18,6 +19,4 @@ class Game{
         void event5(Person person, Display dis);
         //function for what happens when a character dies
         void die(Display dis, int event);
-    public:
-        void BeginEvent();
 };
