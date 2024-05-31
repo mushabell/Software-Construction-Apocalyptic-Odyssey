@@ -1,4 +1,4 @@
-# Install script for directory: /home/csmajs/abell062/final-project-nvank001_jsama031_rkahn007_abell062/tests
+# Install script for directory: /class/classes/jsama031/final-project-nvank001_jsama031_rkahn007_abell062/tests
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,6 +44,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/data/home/csmajs/abell062/final-project-nvank001_jsama031_rkahn007_abell062/tests/googletest/cmake_install.cmake")
+  include("/data/class/classes/jsama031/final-project-nvank001_jsama031_rkahn007_abell062/tests/googletest/cmake_install.cmake")
 endif()
 
