@@ -230,3 +230,73 @@ TEST(Event3, CassidyChoiceT) {
     actualWeapons.push_back("knife");
     EXPECT_EQ(actualWeapons, expectedWeapons);
 }
+
+TEST(GameTest, DieEvent1) {
+    Display display;
+    Game game;
+
+    std::ostringstream oss;
+    std::streambuf* oldCoutBuffer = std::cout.rdbuf(oss.rdbuf());
+
+    game.die(display, 1);
+
+    std::cout.rdbuf(oldCoutBuffer);
+
+    EXPECT_EQ(oss.str(), "You were unsuccessful. Your decision led the zombies into the janitor's closet and they eventually caught up to you. You and your classmates turned into zombies and the zombie apocalypse has taken over the world. You lose!\n\nEnd of game. Would you like to play again or quit?\n(Q) quit\n(R) restart\n");
+}
+
+TEST(GameTest, DieEvent2) {
+    Display display;
+    Game game;
+
+    std::ostringstream oss;
+    std::streambuf* oldCoutBuffer = std::cout.rdbuf(oss.rdbuf());
+
+    game.die(display, 2);
+
+    std::cout.rdbuf(oldCoutBuffer);
+
+    EXPECT_EQ(oss.str(), "You were unsuccessful. Your decision led the zombies into the building and they eventually caught up to you. You and your classmates turned into zombies and the zombie apocalypse has taken over the world. You lose!\n\nEnd of game. Would you like to play again or quit?\n(Q) quit\n(R) restart\n");
+}
+
+TEST(GameTest, DieEvent3) {
+    Display display;
+    Game game;
+
+    std::ostringstream oss;
+    std::streambuf* oldCoutBuffer = std::cout.rdbuf(oss.rdbuf());
+
+    game.die(display, 3);
+
+    std::cout.rdbuf(oldCoutBuffer);
+
+    EXPECT_EQ(oss.str(), "You were unsuccessful. Your decision led the zombies into the cafeteria and they eventually caught up to you. You and your classmates turned into zombies and the zombie apocalypse has taken over the world. You lose!\n\nEnd of game. Would you like to play again or quit?\n(Q) quit\n(R) restart\n");
+}
+
+TEST(GameTest, DieEvent4) {
+    Display display;
+    Game game;
+
+    std::ostringstream oss;
+    std::streambuf* oldCoutBuffer = std::cout.rdbuf(oss.rdbuf());
+
+    game.die(display, 4);
+
+    std::cout.rdbuf(oldCoutBuffer);
+
+    EXPECT_EQ(oss.str(), "You were unsuccessful. Your decision led the zombies into the cafeteria and they eventually caught up to you. You and your classmates turned into zombies and the zombie apocalypse has taken over the world. You lose!\n\nEnd of game. Would you like to play again or quit?\n(Q) quit\n(R) restart\n");
+}
+
+TEST(GameTest, DieEvent5) {
+    Display display;
+    Game game;
+
+    std::ostringstream oss;
+    std::streambuf* oldCoutBuffer = std::cout.rdbuf(oss.rdbuf());
+
+    game.die(display, 5);
+
+    std::cout.rdbuf(oldCoutBuffer);
+
+    EXPECT_EQ(oss.str(), "You were unsuccessful. Your decision led the zombies to attack you from the parking lot. You and your classmates turned into zombies and the zombie apocalypse has taken over the world. You lose!\n\nEnd of game. Would you like to play again or quit?\n(Q) quit\n(R) restart\n");
+}
