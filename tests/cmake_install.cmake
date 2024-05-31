@@ -44,6 +44,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/csmajs/abell062/final-project-nvank001_jsama031_rkahn007_abell062/tests/googletest/cmake_install.cmake")
+  include("/data/home/csmajs/abell062/final-project-nvank001_jsama031_rkahn007_abell062/tests/googletest/cmake_install.cmake")
 endif()
 

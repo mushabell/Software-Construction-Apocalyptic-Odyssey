@@ -44,8 +44,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/csmajs/abell062/final-project-nvank001_jsama031_rkahn007_abell062/src/cmake_install.cmake")
-  include("/home/csmajs/abell062/final-project-nvank001_jsama031_rkahn007_abell062/tests/cmake_install.cmake")
+  include("/data/home/csmajs/abell062/final-project-nvank001_jsama031_rkahn007_abell062/src/cmake_install.cmake")
+  include("/data/home/csmajs/abell062/final-project-nvank001_jsama031_rkahn007_abell062/tests/cmake_install.cmake")
 
 endif()
 
@@ -57,5 +57,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/csmajs/abell062/final-project-nvank001_jsama031_rkahn007_abell062/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/data/home/csmajs/abell062/final-project-nvank001_jsama031_rkahn007_abell062/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
