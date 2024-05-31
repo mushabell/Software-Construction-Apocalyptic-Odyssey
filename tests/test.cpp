@@ -377,7 +377,7 @@ TEST(Event3, GretaChoiceB) {
     Person person("Greta", "can not see without glasses", "good lock picker");
     Display display;
 
-    // Simulate user input for option 'C'
+    // Simulate user input for option 'B'
     std::istringstream input("B\n");
     std::cin.rdbuf(input.rdbuf());
 
@@ -411,6 +411,7 @@ TEST(Event3, GretaChoiceB) {
     actualWeapons.push_back("knife");
     EXPECT_EQ(actualWeapons, expectedWeapons);
 }
+// for my code
 TEST(Event3, RyanChoiceZ) {
     Game game;
     Person person("Ryan", "arm is injured in a cast", "good manipulator");
