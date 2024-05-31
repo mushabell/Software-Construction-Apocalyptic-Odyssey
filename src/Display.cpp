@@ -65,6 +65,7 @@ void Display::error(const string& statement) const{
     cout << endl;
 }
 void Display::finished() const{
+
     cout<<"Congratulations! You made it out of the parking lot and you and your classmates made it out from the campus! You are officially saved from the zombie apocalypse! When you exited the campus, the military was able to figure out a cure for the zombie infection and was able to reverse the zombies back to humans!"<<endl;
 }
 
