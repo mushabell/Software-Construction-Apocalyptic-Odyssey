@@ -301,6 +301,7 @@ void Game::event4(Person person, Display dis){
     while (true){
         if(userchoice == 'U' || userchoice == 'u'){
             dis.options(options.at(7), options.at(8));
+            cin >> userchoice;
             if(userchoice == 'G' || userchoice == 'g'){
                 person.removeWeapon("gun");
                 person.updateProgress();
