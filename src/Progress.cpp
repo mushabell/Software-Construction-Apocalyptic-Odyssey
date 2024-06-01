@@ -16,6 +16,7 @@ void Progress::menu(Person person, Display dis){
     string options = "This is the menu screen. What would you like to do:\n (I) Character Information\n (P) Game Progress \n (Q) Quit and return to game\n";
     dis.status(options);
     char userChoice;
+    cin>> userChoice;
     while(true){
         if (userChoice == 'I' || userChoice == 'i'){
             info(person, dis);
