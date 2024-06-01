@@ -81,6 +81,8 @@ void Game::event1(Person person, Display dis){
         } else if (userChoice == '#') {
             Progress prog;
             prog.menu(person, dis);
+            cin.ignore();
+            cin >> userChoice;
         } else {
             dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");
             cin.ignore();
@@ -169,6 +171,8 @@ void Game::event2(Person person, Display dis){
         } else if (userChoice == '#') {
             Progress prog;
             prog.menu(person, dis);
+            cin.ignore();
+            cin >> userChoice;
         } else {
             dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");
             cin.ignore();
@@ -259,6 +263,8 @@ void Game::event3(Person person, Display dis){
         } else if (userChoice == '#') {
             Progress prog;
             prog.menu(person, dis);
+            cin.ignore();
+            cin >> userChoice;
         } else {
             dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");
             cin.ignore();
@@ -355,6 +361,8 @@ void Game::event4(Person person, Display dis){
         } else if (userchoice == '#') {
             Progress prog;
             prog.menu(person, dis);
+            cin.ignore();
+            cin >> userchoice;
         } else {
             dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");
             cin.ignore();
@@ -477,6 +485,8 @@ void Game::event5(Person person, Display dis){
         } else if (userChoice5 == '#') {
             Progress prog;
             prog.menu(person, dis);
+            cin.ignore();
+            cin >> userChoice5;
         } else {
             dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");
             cin.ignore();
