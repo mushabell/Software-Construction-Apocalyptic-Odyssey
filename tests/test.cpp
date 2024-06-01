@@ -777,3 +777,92 @@ TEST(DieFunction, Event5) {
 
     EXPECT_EQ(oss.str(), "You were unsuccessful. Your decision led the zombies to attack you from the parking lot. You and your classmates turned into zombies and the zombie apocalypse has taken over the world. You lose!\n\nEnd of game. Would you like to play again or quit?\n(Q) quit\n(R) restart\n");
 }
+
+// Test cases for Progress::menu
+TEST(ProgressTest, MenuChoiceI) {
+    Person person ("Ryan", "arm is injured in a cast", "good manipulator");
+    Display display;
+    Progress progress;
+
+    // Redirect std::cin
+    std::stringstream input("I\nQ\n");
+    std::streambuf* oldCin = std::cin.rdbuf(input.rdbuf());
+
+    // Redirect std::cout
+    std::stringstream output;
+    std::streambuf* oldCout = std::cout.rdbuf(output.rdbuf());
+
+    // Call the menu function
+    progress.menu(person, display);
+
+    // Restore std::cin and std::cout
+    std::cin.rdbuf(oldCin);
+    std::cout.rdbuf(oldCout);
+
+    std::string expectedOutput =
+        "This is the menu screen. What would you like to do:\n (I) Character Information\n (P) Game Progress \n (Q) Quit and return to game\n\n"
+        "Your Character's name is: Ryan\n"
+        "Your Character's weakness is: arm is injured in a cast\n"
+        "Your Character's strength is: good manipulator\n"
+        "Your Character's path is: \n"
+        "This is the menu screen. What would you like to do:\n (I) Character Information\n (P) Game Progress \n (Q) Quit and return to game\n\n"
+        "What choice would you like to make for event listed above: \n";
+
+    EXPECT_EQ(output.str(), expectedOutput);
+}
+
+TEST(ProgressTest, MenuChoiceP) {
+    Person person ("Ryan", "arm is injured in a cast", "good manipulator");
+    Display display;
+    Progress progress;
+
+    // Redirect std::cin
+    std::stringstream input("P\nQ\n");
+    std::streambuf* oldCin = std::cin.rdbuf(input.rdbuf());
+
+    // Redirect std::cout
+    std::stringstream output;
+    std::streambuf* oldCout = std::cout.rdbuf(output.rdbuf());
+
+    // Call the menu function
+    progress.menu(person, display);
+
+    // Restore std::cin and std::cout
+    std::cin.rdbuf(oldCin);
+    std::cout.rdbuf(oldCout);
+
+    std::string expectedOutput =
+        "This is the menu screen. What would you like to do:\n (I) Character Information\n (P) Game Progress \n (Q) Quit and return to game\n\n"
+        "0%\n"
+        "This is the menu screen. What would you like to do:\n (I) Character Information\n (P) Game Progress \n (Q) Quit and return to game\n\n"
+        "What choice would you like to make for event listed above: \n";
+
+    EXPECT_EQ(output.str(), expectedOutput);
+}
+
+TEST(ProgressTest, MenuChoiceQ) {
+    Person person("Ryan", "arm is injured in a cast", "good manipulator");
+    Display display;
+    Progress progress;
+
+    // Redirect std::cin
+    std::stringstream input("Q\n");
+    std::streambuf* oldCin = std::cin.rdbuf(input.rdbuf());
+
+    // Redirect std::cout
+    std::stringstream output;
+    std::streambuf* oldCout = std::cout.rdbuf(output.rdbuf());
+
+    // Call the menu function
+    progress.menu(person, display);
+
+    // Restore std::cin and std::cout
+    std::cin.rdbuf(oldCin);
+    std::cout.rdbuf(oldCout);
+
+    std::string expectedOutput =
+        "This is the menu screen. What would you like to do:\n (I) Character Information\n (P) Game Progress \n (Q) Quit and return to game\n\n"
+        "What choice would you like to make for event listed above: \n";
+
+    EXPECT_EQ(output.str(), expectedOutput);
+}
