@@ -24,7 +24,6 @@ void Progress::menu(Person person, Display dis){
             dis.gameProgress(person);
             return;
         } else if (userChoice == 'Q' || userChoice == 'q'){
-            //do something
             return;
         } else {
             dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");
