@@ -13,9 +13,10 @@ void Progress::updateGauge(Person person) {
 }
 
 void Progress::menu(Person person, Display dis){
-    string options = "This is the menu screen. What would you like to do:\n (I) Character Information\n (P) Game Progress \n (Q) Quit\n";
+    string options = "This is the menu screen. What would you like to do:\n (I) Character Information\n (P) Game Progress \n (Q) Quit and return to game\n";
     dis.status(options);
     char userChoice;
+    cin>> userChoice;
     while(true){
         if (userChoice == 'I' || userChoice == 'i'){
             info(person, dis);
@@ -24,7 +25,6 @@ void Progress::menu(Person person, Display dis){
             dis.gameProgress(person);
             return;
         } else if (userChoice == 'Q' || userChoice == 'q'){
-            //do something
             return;
         } else {
             dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");

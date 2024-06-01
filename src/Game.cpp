@@ -1,5 +1,6 @@
 #include "../header/Game.h"
 #include "../header/Display.h"
+#include "../header/Progress.h"
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -77,6 +78,9 @@ void Game::event1(Person person, Display dis){
             person.addToPath(options.at(6));
             event2(person, dis);
             return;
+        } else if (userChoice == '#') {
+            Progress prog;
+            prog.menu(person, dis);
         } else {
             dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");
             cin.ignore();
@@ -162,6 +166,9 @@ void Game::event2(Person person, Display dis){
             person.addToPath(options.at(7));
             event3(person,dis);
             return;
+        } else if (userChoice == '#') {
+            Progress prog;
+            prog.menu(person, dis);
         } else {
             dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");
             cin.ignore();
@@ -249,6 +256,9 @@ void Game::event3(Person person, Display dis){
             person.addToPath(options.at(6));
             die(dis, 3);
             return;
+        } else if (userChoice == '#') {
+            Progress prog;
+            prog.menu(person, dis);
         } else {
             dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");
             cin.ignore();
@@ -342,6 +352,9 @@ void Game::event4(Person person, Display dis){
             person.addToPath(options.at(6));
             event5(person, dis);
             return;
+        } else if (userchoice == '#') {
+            Progress prog;
+            prog.menu(person, dis);
         } else {
             dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");
             cin.ignore();
@@ -349,7 +362,6 @@ void Game::event4(Person person, Display dis){
         }
     }
 }
-
 
 //obstacles for event five
 void Game::event5(Person person, Display dis){
@@ -462,6 +474,9 @@ void Game::event5(Person person, Display dis){
         } else if(userChoice5 == 'F' || userChoice5 == 'f'){
             die(dis, 5);
             return;
+        } else if (userChoice5 == '#') {
+            Progress prog;
+            prog.menu(person, dis);
         } else {
             dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");
             cin.ignore();
