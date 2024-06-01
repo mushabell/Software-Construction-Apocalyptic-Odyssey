@@ -13,7 +13,7 @@ void Progress::updateGauge(Person person) {
 }
 
 void Progress::menu(Person person, Display dis){
-    string options = "This is the menu screen. What would you like to do:\n (I) Character Information\n (P) Game Progress \n (Q) Quit\n";
+    string options = "This is the menu screen. What would you like to do:\n (I) Character Information\n (P) Game Progress \n (Q) Quit and return to game\n";
     dis.status(options);
     char userChoice;
     while(true){
