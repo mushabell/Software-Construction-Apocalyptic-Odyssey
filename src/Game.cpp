@@ -453,7 +453,6 @@ void Game::event5(Person person, Display dis){
             dis.finished();
             return;
         } else if(userChoice5 == 'J' || userChoice5 == 'j'){
-            person.updateProgress();
             die(dis, 5);
             return;
         } else if(userChoice5 == 'D' || userChoice5 == 'd'){
@@ -461,7 +460,6 @@ void Game::event5(Person person, Display dis){
             dis.finished();
             return;
         } else if(userChoice5 == 'F' || userChoice5 == 'f'){
-            person.updateProgress();
             die(dis, 5);
             return;
         } else {
