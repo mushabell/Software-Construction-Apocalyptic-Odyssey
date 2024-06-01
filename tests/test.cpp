@@ -856,3 +856,34 @@ TEST(ProgressTest, MenuChoiceQ) {
 
     EXPECT_EQ(output.str(), expectedOutput);
 }
+TEST(PersonTest, RemoveWeapon) {
+    // Create a Person object
+    Person person("John", "Fear of heights", "Strength");
+
+    // Add a weapon
+    person.addWeapon("knife");
+
+    // Check if the weapon was added successfully
+    EXPECT_TRUE(person.checkWeapon("knife"));
+
+    // Remove the weapon
+    person.removeWeapon("knife");
+
+    // Check if the weapon was removed successfully
+    EXPECT_FALSE(person.checkWeapon("knife"));
+}
+
+// Test case for updateProgress method
+TEST(PersonTest, UpdateProgress) {
+    // Create a Person object
+    Person person("John", "Fear of heights", "Strength");
+
+    // Initially, progress should be 0
+    EXPECT_EQ(person.getGameProgress(), 0);
+
+    // Update progress
+    person.updateProgress();
+
+    // Progress should now be 20
+    EXPECT_EQ(person.getGameProgress(), 20);
+}
