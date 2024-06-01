@@ -16,9 +16,13 @@ void Progress::menu(Person person, Display dis){
         if (userChoice == 'I' || userChoice == 'i'){
             info(person, dis);
             dis.status(options);
+            cin.ignore();
+            cin>> userChoice;
         } else if (userChoice == 'P' || userChoice == 'p'){
             dis.gameProgress(person);
             dis.status(options);
+            cin.ignore();
+            cin>> userChoice;
         } else if (userChoice == 'Q' || userChoice == 'q'){
             return;
         } else {
