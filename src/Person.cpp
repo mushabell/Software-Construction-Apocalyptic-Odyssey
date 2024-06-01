@@ -21,9 +21,6 @@ string Person::getName() const{
 
 //update the progress based on a a percentage scale
 void Person::updateProgress(){
-    if (gameProgressGauge == 0) {
-        gameProgressGauge = 20;
-    }
     gameProgressGauge = gameProgressGauge + 20;
 }
 

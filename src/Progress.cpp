@@ -7,11 +7,6 @@
 #include <string>
 using namespace std;
 
-void Progress::updateGauge(Person person) {
-    //after each event, call updateGauge --for programmer
-    person.updateProgress();
-}
-
 void Progress::menu(Person person, Display dis){
     string options = "This is the menu screen. What would you like to do:\n (I) Character Information\n (P) Game Progress \n (Q) Quit and return to game\n";
     dis.status(options);
@@ -20,10 +15,10 @@ void Progress::menu(Person person, Display dis){
     while(true){
         if (userChoice == 'I' || userChoice == 'i'){
             info(person, dis);
-            return;
+            dis.status(options);
         } else if (userChoice == 'P' || userChoice == 'p'){
             dis.gameProgress(person);
-            return;
+            dis.status(options);
         } else if (userChoice == 'Q' || userChoice == 'q'){
             return;
         } else {
