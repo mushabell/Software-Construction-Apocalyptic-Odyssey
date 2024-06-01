@@ -411,7 +411,6 @@ TEST(Event3, GretaChoiceB) {
     actualWeapons.push_back("knife");
     EXPECT_EQ(actualWeapons, expectedWeapons);
 }
-
 TEST(Event3, RyanChoiceZ) {
     Game game;
     Person person("Ryan", "arm is injured in a cast", "good manipulator");
@@ -608,10 +607,7 @@ TEST(Event4, CassidyChoiceH) {
     actualWeapons.push_back("gun");
     EXPECT_EQ(actualWeapons, expectedWeapons);
 }
-
 //------------------------------------------------(Event 5)-----------------------------------------------------------
-
-
 TEST(Event5, Dr_BrownChoiceF) {
     Game game;
     Person person ("Dr.Brown", "can not run fast", "fire making glasses");
@@ -644,7 +640,6 @@ TEST(Event5, Dr_BrownChoiceF) {
         EXPECT_TRUE(output.str().find(option) != std::string::npos);
     }
 }
-
 TEST(Event5, GretaChoiceR) {
     Game game;
     Person person ("Greta", "can not see without glasses", "good lock picker");
@@ -677,7 +672,6 @@ TEST(Event5, GretaChoiceR) {
         EXPECT_TRUE(output.str().find(option) != std::string::npos);
     }
 }
-
 TEST(Event5, CassidyChoiceJ) {
     Game game;
     Person person ("Cassidy", "has a bad attitude", "strength");
@@ -710,7 +704,6 @@ TEST(Event5, CassidyChoiceJ) {
         EXPECT_TRUE(output.str().find(option) != std::string::npos);
     }
 }
-
 //------------------------------------------------(Die)-----------------------------------------------------------
 TEST(DieFunction, Event1) {
     Display display;
@@ -777,8 +770,7 @@ TEST(DieFunction, Event5) {
 
     EXPECT_EQ(oss.str(), "You were unsuccessful. Your decision led the zombies to attack you from the parking lot. You and your classmates turned into zombies and the zombie apocalypse has taken over the world. You lose!\n\nEnd of game. Would you like to play again or quit?\n(Q) quit\n(R) restart\n");
 }
-
-// Test cases for Progress::menu
+//------------------------------------------------(Progress Menu)-----------------------------------------------------------
 TEST(ProgressTest, MenuChoiceI) {
     Person person ("Ryan", "arm is injured in a cast", "good manipulator");
     Display display;
@@ -810,7 +802,6 @@ TEST(ProgressTest, MenuChoiceI) {
 
     EXPECT_EQ(output.str(), expectedOutput);
 }
-
 TEST(ProgressTest, MenuChoiceP) {
     Person person ("Ryan", "arm is injured in a cast", "good manipulator");
     Display display;
@@ -839,7 +830,6 @@ TEST(ProgressTest, MenuChoiceP) {
 
     EXPECT_EQ(output.str(), expectedOutput);
 }
-
 TEST(ProgressTest, MenuChoiceQ) {
     Person person("Ryan", "arm is injured in a cast", "good manipulator");
     Display display;
