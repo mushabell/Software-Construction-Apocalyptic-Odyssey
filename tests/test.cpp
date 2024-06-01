@@ -411,7 +411,6 @@ TEST(Event3, GretaChoiceB) {
     actualWeapons.push_back("knife");
     EXPECT_EQ(actualWeapons, expectedWeapons);
 }
-
 TEST(Event3, RyanChoiceZ) {
     Game game;
     Person person("Ryan", "arm is injured in a cast", "good manipulator");
@@ -490,7 +489,7 @@ TEST(Event3, CassidyChoiceT) {
     actualWeapons.push_back("knife");
     EXPECT_EQ(actualWeapons, expectedWeapons);
 }
-
+//------------------------------------------------(Event 4)-----------------------------------------------------------
 TEST(Event4, GretaChoiceS) {
     Game game;
     Person person("Greta", "can not see without glasses", "good lock picker");
@@ -530,7 +529,6 @@ TEST(Event4, GretaChoiceS) {
     actualWeapons.push_back("gun");
     EXPECT_EQ(actualWeapons, expectedWeapons);
 }
-
 TEST(Event4, GretaChoiceR) {
     Game game;
     Person person("Greta", "can not see without glasses", "good lock picker");
@@ -570,7 +568,6 @@ TEST(Event4, GretaChoiceR) {
     actualWeapons.push_back("gun");
     EXPECT_EQ(actualWeapons, expectedWeapons);
 }
-
 TEST(Event4, CassidyChoiceH) {
     Game game;
     Person person("Cassidy", "has a bad attitude", "strength");
@@ -610,7 +607,6 @@ TEST(Event4, CassidyChoiceH) {
     actualWeapons.push_back("gun");
     EXPECT_EQ(actualWeapons, expectedWeapons);
 }
-
 //------------------------------------------------(Die)-----------------------------------------------------------
 TEST(DieFunction, Event1) {
     Display display;
