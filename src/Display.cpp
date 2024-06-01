@@ -28,7 +28,7 @@ void Display::death(const string& statement) const{
     cout << "(R) restart" << endl;
 }
 void Display::gameProgress(const Person& person) const{
-    cout << person.getGameProgress() << "%";
+    cout << person.getGameProgress() << "%" << endl;
 }
 void Display::menu() const{
     cout << "It is currently 6:43pm on campus. There are 6 people in the classroom who are Dr.Brown, Cassidy, Jerome, Jessie, Ryan, and Greta. "; 
@@ -52,7 +52,7 @@ void Display::backstory(const Person& person) const{
     } else if (person.getName() == "Ryan"){
         cout<< "Hi Ryan! Hope you are ready for some tough challenges. A character skill that you carry is your ability to manipulate people! When you were a child, your parents got divorced and got you a lot of gifts to make up for it. Eventually you learned to manipulate them to get any gift that you wanted. With this skill of manipulation, you became very popular in school and learned how to manipulate the people in school! Now you and the people in your class must exit the campus together to survive." << endl;
     }
-    cout<<"If you need a reminder of choices you have made, character information, or progress type (*) "<<endl;
+    cout<<"If you need a reminder of choices you have made, character information, or progress type (#)"<<endl;
 }
 void Display::error(const string& statement) const{
     cout << statement << endl;
