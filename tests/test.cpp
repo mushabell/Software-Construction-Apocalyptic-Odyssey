@@ -858,7 +858,7 @@ TEST(ProgressTest, MenuChoiceQ) {
 }
 TEST(PersonTest, RemoveWeapon) {
     // Create a Person object
-    Person person("John", "Fear of heights", "Strength");
+    Person person("Ryan", "arm is injured in a cast", "good manipulator");
 
     // Add a weapon
     person.addWeapon("knife");
@@ -876,7 +876,7 @@ TEST(PersonTest, RemoveWeapon) {
 // Test case for updateProgress method
 TEST(PersonTest, UpdateProgress) {
     // Create a Person object
-    Person person("John", "Fear of heights", "Strength");
+    Person person("Ryan", "arm is injured in a cast", "good manipulator");
 
     // Initially, progress should be 0
     EXPECT_EQ(person.getGameProgress(), 0);
