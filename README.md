@@ -257,7 +257,17 @@ The class diagram for Apocalyptic Odyssey is made up of 4 classes — Game, Pers
  ## Screenshots
  > Screenshots of the input/output after running your application
  ## Installation/Usage
- > Instructions on installing and running your application
+ 1. Download all the folders src and header from this repo onto a application that allows you to run C++ code.
+ 2. On the application, open a terminal which will allow you to access the files.
+ 3. Run the line of code below to compile the code.
+    ```
+    g++ src/Display.cpp src/Game.cpp src/Progress.cpp src/Weapon.cpp src/main.cpp src/Person.cpp
+    ```
+ 5. Run the line of code below to run the code.
+    ```
+    ./a.out
+    ```
+ 7. Play the game and have fun!
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
  
