@@ -24,7 +24,7 @@ void Progress::menu(Person person, Display dis){
             cin.ignore();
             cin>> userChoice;
         } else if (userChoice == 'Q' || userChoice == 'q'){
-            dis.status("What choice would you like to make for event listed above: \n");
+            dis.status("What choice would you like to make for event listed above: ");
             return;
         } else {
             dis.error("Invalid choice. Please type the letter of the choice you would like to choose. Type the letter that is in the parenthesis.");
