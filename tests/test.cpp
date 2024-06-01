@@ -412,7 +412,6 @@ TEST(Event3, GretaChoiceB) {
     EXPECT_EQ(actualWeapons, expectedWeapons);
 }
 
-//adding my tests for event 5
 TEST(Event3, RyanChoiceZ) {
     Game game;
     Person person("Ryan", "arm is injured in a cast", "good manipulator");
@@ -609,6 +608,109 @@ TEST(Event4, CassidyChoiceH) {
     actualWeapons.push_back("gun");
     EXPECT_EQ(actualWeapons, expectedWeapons);
 }
+
+//------------------------------------------------(Event 5)-----------------------------------------------------------
+
+
+TEST(Event5, Dr_BrownChoiceF) {
+    Game game;
+    Person person ("Dr.Brown", "can not run fast", "fire making glasses");
+    Display display;
+
+    // Simulate user input for option 'F'
+    std::istringstream input("F\n");
+    std::cin.rdbuf(input.rdbuf());
+
+    // Capture the output
+    std::ostringstream output;
+    std::streambuf* oldCoutBuffer = std::cout.rdbuf(output.rdbuf());
+
+    // Execute the event3 function
+    game.event5(person, display);
+
+    // Restore the original buffer for std::cout
+    std::cout.rdbuf(oldCoutBuffer);
+
+    // Verify the prompt
+    std::string expectedPrompt = "Nice choice! You made it outside of the lab! All you have to do is make it through the parking lot with your classmates. You can see the exit within a few feet. You step one foot on the pavement and find that the zombies have set up camp in the parking lot. This is where the zombies live! You have no choice but to go through the parking lot! What do you want to do now: ";
+    EXPECT_TRUE(output.str().find(expectedPrompt) != std::string::npos);
+
+    // Verify the options displayed
+    std::vector<std::string> expectedOptions = {
+        "(Z) Use your skills against the zombies",
+        "(F) Ask Jerome to fight all the zombies to make it out of the parking lot"
+    };
+    for (const auto& option : expectedOptions) {
+        EXPECT_TRUE(output.str().find(option) != std::string::npos);
+    }
+}
+
+TEST(Event5, GretaChoiceR) {
+    Game game;
+    Person person ("Greta", "can not see without glasses", "good lock picker");
+    Display display;
+
+    // Simulate user input for option 'R'
+    std::istringstream input("R\n");
+    std::cin.rdbuf(input.rdbuf());
+
+    // Capture the output
+    std::ostringstream output;
+    std::streambuf* oldCoutBuffer = std::cout.rdbuf(output.rdbuf());
+
+    // Execute the event3 function
+    game.event5(person, display);
+
+    // Restore the original buffer for std::cout
+    std::cout.rdbuf(oldCoutBuffer);
+
+    // Verify the prompt
+    std::string expectedPrompt = "Nice choice! You made it outside of the lab! All you have to do is make it through the parking lot with your classmates. You can see the exit within a few feet. You step one foot on the pavement and find that the zombies have set up camp in the parking lot. This is where the zombies live! You have no choice but to go through the parking lot! What do you want to do now: ";
+    EXPECT_TRUE(output.str().find(expectedPrompt) != std::string::npos);
+
+    // Verify the options displayed
+    std::vector<std::string> expectedOptions = {
+        "(R) Ask Ryan to manipulate all the zombies into letting everyone go",
+        "(Z) Use your skills against the zombies"
+    };
+    for (const auto& option : expectedOptions) {
+        EXPECT_TRUE(output.str().find(option) != std::string::npos);
+    }
+}
+
+TEST(Event5, CassidyChoiceJ) {
+    Game game;
+    Person person ("Cassidy", "has a bad attitude", "strength");
+    Display display;
+
+    // Simulate user input for option 'J'
+    std::istringstream input("J\n");
+    std::cin.rdbuf(input.rdbuf());
+
+    // Capture the output
+    std::ostringstream output;
+    std::streambuf* oldCoutBuffer = std::cout.rdbuf(output.rdbuf());
+
+    // Execute the event3 function
+    game.event5(person, display);
+
+    // Restore the original buffer for std::cout
+    std::cout.rdbuf(oldCoutBuffer);
+
+    // Verify the prompt
+    std::string expectedPrompt = "Nice choice! You made it outside of the lab! All you have to do is make it through the parking lot with your classmates. You can see the exit within a few feet. You step one foot on the pavement and find that the zombies have set up camp in the parking lot. This is where the zombies live! You have no choice but to go through the parking lot! What do you want to do now: ";
+    EXPECT_TRUE(output.str().find(expectedPrompt) != std::string::npos);
+
+    // Verify the options displayed
+    std::vector<std::string> expectedOptions = {
+        "(B) Ask Dr.Brown to set a fire as a distraction",
+        "(J) Ask Jessie to run really fast and get help"
+    };
+    for (const auto& option : expectedOptions) {
+        EXPECT_TRUE(output.str().find(option) != std::string::npos);
+    }
+}
+
 //------------------------------------------------(Die)-----------------------------------------------------------
 TEST(DieFunction, Event1) {
     Display display;
