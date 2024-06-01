@@ -31,11 +31,13 @@ void Display::gameProgress(const Person& person) const{
     cout << person.getGameProgress() << "%" << endl;
 }
 void Display::menu() const{
-    cout << "It is currently 6:43pm on campus. There are 6 people in the classroom who are Dr.Brown, Cassidy, Jerome, Jessie, Ryan, and Greta. "; 
-    cout << "There had been an explosion in Dr.Heisenberg\'s lab and had caused a zombie apocalypse! You must make it off the campus to save your life! Jerome is the president of the MMA club. "; 
+    cout << "It is currently 6:43pm on campus. There are 6 people in the classroom who are Dr. Brown, Cassidy, Jerome, Jessie, Ryan, and Greta. "; 
+    cout << "There had been an explosion in Dr. Heisenberg\'s lab and had caused a zombie apocalypse! You must make it off the campus to save your life! Jerome is the president of the MMA club. "; 
     cout << "Greta loves to hack computer systems for fun. Cassidy is on academic probation and would lose her athletic scholarship if she does not do well in class. Ryan is very popular because he is good at manipulating people. ";
-    cout << "Jessie loves to be a part of the track team and work with her geology professors. Who would you like to be: Ryan, Jessie, Dr.Brown, Cassidy, Jerome, or Greta? " << endl;
-    cout << "Please type the name of the character you would like to be: ";
+    cout << "Jessie loves to be a part of the track team and work with her geology professors. ";
+    cout << "Dr. Brown is a creative professor of economics at the university. He cares for his students and has a great relationship with them. ";
+    cout << "Who would you like to be: Ryan, Jessie, Dr. Brown, Cassidy, Jerome, or Greta?" << endl;
+    cout << "Please type the name of the character you would like to be (type Dr. Brown's name as Dr.Brown with no space): ";
 }
 void Display::backstory(const Person& person) const{
     cout << endl;

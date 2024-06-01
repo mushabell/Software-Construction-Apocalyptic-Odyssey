@@ -20,7 +20,7 @@ void Game::event1(Person person, Display dis){
      "(R) Ask Ryan to go talk to the zombies and manipulate them into letting you all go", 
      "(C) Ask Cassidy to lift throw heavy buckets from the closest onto the zombies", "(Z) Use your skills against the zombies"};
 
-    string event1 = "When you begin to run out of the classroom and into the hallway you notice a hoard of zombies. You are backed against a corner. You notice that you are backed against the janitors closet. You enter the closest with all your classmates to hide from the zombies. What do you want to do now?";
+    string event1 = "When you begin to run out of the classroom and into the hallway you notice a hoard of zombies. You are backed against a corner. You notice that you are backed against the janitors closet. You enter the closest with all your classmates to hide from the zombies. What do you want to do now: ";
     //display the prompt
     dis.eventPrompt(event1);
     char userChoice;
@@ -105,7 +105,7 @@ void Game::event2(Person person, Display dis){
    vector<string> options{"(H) Hide in the building until there is only a little bit of zombies outside", "(J) Ask Jerome to go outside and use his MMA skills to fight the zombies", "(Z) Use your skills against the zombies", "(D) Dig a tunnel underground to get out of the building without getting attacked by zombies",
    "(R) Ask Ryan to manipulate the zombies into letting all of you go", "(M) Carry a mirror with you so every time a zombie comes near you, they only see their own reflection", "(W) Wait for the zombies to leave and then exit the building", "(B) Ask Dr. Brown to set a fire outside to distract the zombies"};
   
-   string event2 = "Nice choice, you made it out of the janitor’s closet! You continue to walk towards the exit of the building. Right before you open the door you notice a bunch of zombies walking around the campus. What do you want to do: ";
+   string event2 = "Nice choice, you made it out of the janitor’s closet! You continue to walk towards the exit of the building. Right before you open the door you notice a bunch of zombies walking around the campus. What do you want to do now: ";
     //display the prompt
     dis.eventPrompt(event2);
     char userChoice;
@@ -200,7 +200,7 @@ void Game::event3(Person person, Display dis){
      "(Z) Wait for the zombies to come break the door", 
      "(T) Dig a tunnel underground to get out of the cafeteria"};
 
-    string event3 = "Nice choice! You made it outside of the building! You decide to go through the cafeteria to choose the shortest path to get off the campus as fast as possible. When you enter the cafeteria you see that the building is empty. You and your classmates enter the main hall and the door closes behind you. You notice a knife on the floor and pick it up for protection. You walk across the hall and try to open the door behind you but you can not! What do you want to do now?";
+    string event3 = "Nice choice! You made it outside of the building! You decide to go through the cafeteria to choose the shortest path to get off the campus as fast as possible. When you enter the cafeteria you see that the building is empty. You and your classmates enter the main hall and the door closes behind you. You notice a knife on the floor and pick it up for protection. You walk across the hall and try to open the door behind you but you cannot! What do you want to do now: ";
     //display the prompt
     dis.eventPrompt(event3);
     person.addWeapon("knife");
@@ -290,7 +290,7 @@ void Game::event4(Person person, Display dis){
     "(R) Run away to the other side of the lab", "(M) Ask Ryan to manipulate the zombies", "(P) Create a poison in the lab to kill the zombies with",
     "(H) Act like a statue and hope the zombies will not see you", "(F) Set a fire to distract the zombies", "(G) Use a gun to kill the zombies", "(K) Use a knife to kill the zombies"};
 
-    string event4 = "Nice choice, you made it out of the cafeteria! You only have to make it through the science lab and the parking lot to exit the campus. You walk by the science lab and notice a shortcut through the lab. You decide to take the shortcut and enter the lab. When you enter the lab you find a gun on the floor with three bullets. You pick it up for safety. As you are about to exit the lab, zombies come out from the corner of the lab! What do you want to do:";
+    string event4 = "Nice choice, you made it out of the cafeteria! You only have to make it through the science lab and the parking lot to exit the campus. You walk by the science lab and notice a shortcut through the lab. You decide to take the shortcut and enter the lab. When you enter the lab you find a gun on the floor with three bullets. You pick it up for safety. As you are about to exit the lab, zombies come out from the corner of the lab! What do you want to do: ";
     dis.eventPrompt(event4);
     char userchoice;
     person.addWeapon("gun");
@@ -525,7 +525,7 @@ void Game::BeginEvent(){
     while (true){
         //checking to make sure that they put a valid name
         if (name == "Greta" || name == "greta"){
-            Person Greta("Greta", "can not see without glasses", "good lock picker");
+            Person Greta("Greta", "cannot see without glasses", "good lock picker");
             dis.backstory(Greta);
             Greta.addToPath("Greta");
             event1(Greta, dis);
@@ -543,7 +543,7 @@ void Game::BeginEvent(){
             event1(Cassidy, dis);
             return;
         } else if (name == "Dr.Brown" || name == "dr.brown" || name == "Dr.brown" || name == "dr.Brown"){
-            Person DrBrown ("Dr.Brown", "can not run fast", "fire making glasses");
+            Person DrBrown ("Dr.Brown", "cannot run fast", "fire making glasses");
             dis.backstory(DrBrown);
             DrBrown.addToPath("Dr.Brown");
             event1(DrBrown, dis);
