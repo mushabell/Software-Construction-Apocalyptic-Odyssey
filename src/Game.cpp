@@ -436,7 +436,7 @@ void Game::event5(Person person, Display dis){
                 cin.ignore();
             }
             person.updateProgress();
-            if (userChoice5 == 'g' || userChoice5 == 'G') {
+            if (userChoice5 == 'G' || userChoice5 == 'g') {
                 person.addToPath("(G) Use a gun to kill the zombies");
             }
             else {
