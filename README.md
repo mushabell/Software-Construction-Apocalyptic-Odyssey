@@ -247,19 +247,21 @@ The class diagram for Apocalyptic Odyssey is made up of 7 classes — Game, Pers
 * Open Closed Principle: We applied the Open Closed Principle to our weapons class. We made an abstract class for weapons as a base class. All the different types of weapons were made as derived classes. The person class holds a vector of all the weapons which allows a person to have none to multiple weapons to use. This follows the open closed principle because we are able to add more weapons as a derived class from the weapons and use those weapons in the game and person class without making changes in the person and game class. This helped us write better code because we are able to add more features and build on our code easily without having to make significant changes throughout the multiple classes which use the weapons.
 * Liskov’s Substitution Principle: We applied the Liskov’s Substitution Principle in our implementation of the weapons derived classes. The abstract weapon class has 2 derived classes that allows for the Liskov’s substitution principle to be implemented. All the derived classes do not have any special functions or attributes which allows them to be interchangeable at any time and functional throughout the code. This helped us write better code because we are able to swap weapons in our main program at any time without having any errors or bugs throughout the program.
  
- > ## Final deliverable
- > All group members will give a demo to the reader during lab time. ou should schedule your demo on Calendly with the same reader who took your second scrum meeting. The reader will check the demo and the project GitHub repository and ask a few questions to all the team members. 
- > Before the demo, you should do the following:
- > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
- > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Project board.
- > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
-
+ ## Final deliverable
 ![Apocalyptic_Odyssey_UML_Diagram-New UML drawio](https://github.com/cs100/final-project-nvank001_jsama031_rkahn007_abell062/assets/19979330/a07f04e2-503a-41c7-95f8-77f8e8ab41f7)
 
 The class diagram for Apocalyptic Odyssey is made up of 7 classes — Game, Person, Weapon, Knife, Gun, Display, Progress. The Game class is used for moving through the 5 events of the game. It is made up of 7 public functions: event1(), event2(), event3(), event4(), event5(), and die(), amd BeginEvent(). It is composed of the Display class and Person class. The Person class is used for storing and keeping track of the character's data. It is made up of 11 public functions: Person(), getName(), updateProgress(), getGameProgress(), getStrength(), getWeaknesss(), addWeapon(), checkWeapon(), removeWeapon(), addToPath(), and getPath() -- and 6 private variables: characterName, weapons, strangth, weakness, gameProgressGauge, path. The Person class is composed of the Progress class and the Weapon class. The Weapon class is used for keeping track of each weapon's story. It is made up of 3 public functions: Weapon(), getStory(), and getType() -- and 2 private variables: story and type. The class is inherited from the Knife class and Gun class. These two classes are used to keep track of any additional functionality that their specific weapon may require, and they do not have any member functions or variables. The Progress class is used for updating the character's progress. It is made up of 2 public functions: menu() and info(). It is associated with the Game class and the Display class. The Display class is used for outputting all the elements of the game to the user. It is made up of 11 public functions: eventPrompt(), options(), options()—with different parameters, status(), death(), gameProgress(), menu(), backstory(), error(), finished(), and outputinfo(). The Display class is composed of the person class.
  
  ## Screenshots
- > Screenshots of the input/output after running your application
+#### One scenario where Jerome is selected as a character and wins the game below. 
+ ![image](https://github.com/cs100/final-project-nvank001_jsama031_rkahn007_abell062/assets/165875194/021c873e-49c6-4cd0-a875-239097263ca5)
+#### One scenario where Cassidy is selected as the character and dies during the game after the first event below. 
+![image](https://github.com/cs100/final-project-nvank001_jsama031_rkahn007_abell062/assets/165875194/1ccd9fb4-99cc-47b0-ad4a-45c6da903941)
+#### One scenario where Ryan dies in the first event after using all the menu options below. 
+![image](https://github.com/cs100/final-project-nvank001_jsama031_rkahn007_abell062/assets/165875194/23630db9-8bbf-48c3-87cb-5568ac90e017)
+#### One scenario where Dr. Brown uses a gun and knife, wins the game, and uses the menu options below.
+![image](https://github.com/cs100/final-project-nvank001_jsama031_rkahn007_abell062/assets/165875194/dad78dd1-31de-461b-afb7-2047f8902ab0)
+![image](https://github.com/cs100/final-project-nvank001_jsama031_rkahn007_abell062/assets/165875194/c73b1c6e-b146-429f-94ac-63d7a6747ab5)
  ## Installation/Usage
  1. Download all the folders src and header from this repo onto a application that allows you to run C++ code.
  2. On the application, open a terminal which will allow you to access the files.
