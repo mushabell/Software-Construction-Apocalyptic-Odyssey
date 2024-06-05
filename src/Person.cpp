@@ -41,10 +41,10 @@ string Person::getWeakness() const{
 //addds a weapon to the vecotr 
 void Person::addWeapon(string weaponType){
     if (weaponType == "knife"){
-        Weapon knife("this is the story of the knife", "knife");
+        Weapon knife("knife");
         weapons.push_back(knife);
     } else {
-        Weapon gun("this is the story of the gun", "gun");
+        Weapon gun("gun");
         weapons.push_back(gun);
     }
 }
