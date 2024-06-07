@@ -16,3 +16,4 @@ lib/libgtest.a
 lib/libgtest_main.a
 lib/libsimpleLibrary.a
 tests/cmake_install.cmake
+.gitmodules
