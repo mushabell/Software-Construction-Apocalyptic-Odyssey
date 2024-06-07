@@ -10,6 +10,5 @@ class Weapon{
         string type;
     public:
         Weapon(string t) : type(t) {}
-        string getStory();
         string getType();
 };
