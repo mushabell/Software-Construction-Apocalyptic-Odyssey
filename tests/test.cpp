@@ -856,6 +856,7 @@ TEST(ProgressTest, MenuChoiceQ) {
 
     EXPECT_EQ(output.str(), expectedOutput);
 }
+//------------------------------------------------(Person Class)-----------------------------------------------------------
 TEST(PersonTest, RemoveWeapon) {
     // Create a Person object
     Person person("Ryan", "arm is injured in a cast", "good manipulator");
@@ -872,8 +873,6 @@ TEST(PersonTest, RemoveWeapon) {
     // Check if the weapon was removed successfully
     EXPECT_FALSE(person.checkWeapon("knife"));
 }
-
-// Test case for updateProgress method
 TEST(PersonTest, UpdateProgress) {
     // Create a Person object
     Person person("Ryan", "arm is injured in a cast", "good manipulator");
@@ -887,9 +886,7 @@ TEST(PersonTest, UpdateProgress) {
     // Progress should now be 20
     EXPECT_EQ(person.getGameProgress(), 20);
 }
-
 //------------------------------------------------(Display Functions)-----------------------------------------------------------
-
 TEST(DisplayFuction, errorTest) {
     Display display;
     Game game;
@@ -903,7 +900,6 @@ TEST(DisplayFuction, errorTest) {
 
     EXPECT_EQ(oss.str(), "Test error function\n\n");
 }
-
 TEST(DisplayFunction, finishedTests) {
     Display display;
 
@@ -916,7 +912,6 @@ TEST(DisplayFunction, finishedTests) {
 
     EXPECT_EQ(oss.str(), "Congratulations! You made it out of the parking lot and you and your classmates made it out from the campus! You are officially saved from the zombie apocalypse! When you exited the campus, the military was able to figure out a cure for the zombie infection and was able to reverse the zombies back to humans!\n");
 }
-
 TEST(DisplayFunction, deathTest) {
     Display display;
 
@@ -930,7 +925,6 @@ TEST(DisplayFunction, deathTest) {
     std::string expectedOutput = "You died\n\nEnd of game. Would you like to play again or quit?\n(Q) quit\n(R) restart\n";
     EXPECT_EQ(oss.str(), expectedOutput);
 }
-
 TEST(DisplayFunction, menuTests) {
     Display display;
 
